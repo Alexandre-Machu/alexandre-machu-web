@@ -25,7 +25,10 @@ export default function Home() {
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
           {profile.availability}
         </p>
-        <h1 className="rise mt-8 max-w-3xl text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl" style={{ animationDelay: "60ms" }}>
+        <p className="rise mt-8 text-sm font-medium uppercase tracking-[0.14em] text-accent" style={{ animationDelay: "30ms" }}>
+          {profile.role}
+        </p>
+        <h1 className="rise mt-4 max-w-3xl text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl" style={{ animationDelay: "60ms" }}>
           Je fais le lien entre les métiers et l&apos;IT,{" "}
           <span className="font-serif font-normal italic text-accent">et je code</span> les outils qui manquent.
         </h1>
@@ -139,7 +142,7 @@ export default function Home() {
           </div>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted">
             En dehors de ça : piano depuis 16 ans, volley depuis 6 ans, League of Legends (rang Master, 6 titres en
-            compétition, pseudo {profile.alias}) et speedrun de Celeste (top 1000 mondial).
+            compétition, pseudo {profile.alias}), speedrun de Celeste (top 1000 mondial), photo esport et moto.
           </p>
         </Section>
       </div>
