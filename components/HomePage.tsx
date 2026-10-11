@@ -1,6 +1,7 @@
 import { ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
 import { FeaturedProject } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
+import Gallery from "@/components/Gallery";
 import { BehanceIcon, GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { content, ui, type Lang } from "@/lib/i18n";
 
@@ -201,18 +202,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
           <div className="mt-20">
             <h3 className="font-serif text-3xl tracking-tight sm:text-4xl">{t.galleryTitle}</h3>
-            <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
-              {photos.map((ph) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={ph.src}
-                  src={ph.src}
-                  alt={ph.alt}
-                  loading="lazy"
-                  className="mb-4 w-full break-inside-avoid rounded-xl ring-1 ring-white/10"
-                />
-              ))}
-            </div>
+            <Gallery photos={photos} labels={t.gallery} />
           </div>
         </div>
       </section>
