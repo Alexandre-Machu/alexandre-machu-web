@@ -181,13 +181,18 @@ export default function Home() {
                 rôles autour d&apos;un tournoi. J&apos;y fais ce que je fais au travail : organiser, outiller, tenir un groupe.
               </p>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/esport-micro.jpg"
-              alt="Alexandre au micro pendant une conférence"
-              className="aspect-[4/5] w-full rounded-2xl object-cover object-top ring-1 ring-white/10 md:w-[300px]"
-              loading="lazy"
-            />
+            <figure className="md:w-[300px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/esport-micro.jpg"
+                alt="Alexandre au micro, posant une question pendant une conférence sur l'esport"
+                className="aspect-[4/5] w-full rounded-2xl object-cover object-top ring-1 ring-white/10"
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-xs leading-relaxed text-white/60">
+                Journée de conférences sur l&apos;esport à Paris-Saclay, organisée par Nicolas Besombes.
+              </figcaption>
+            </figure>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
