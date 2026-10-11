@@ -49,7 +49,15 @@ export function Logo({ item, dark = false }: { item: Item; dark?: boolean }) {
   );
 }
 
-export function Timeline({ items, stacked = false }: { items: Item[]; stacked?: boolean }) {
+export function Timeline({
+  items,
+  stacked = false,
+  detailsLabel = "Voir le détail",
+}: {
+  items: Item[];
+  stacked?: boolean;
+  detailsLabel?: string;
+}) {
   return (
     <ol className="divide-y divide-line border-y border-line">
       {items.map((it) => (
@@ -66,17 +74,33 @@ export function Timeline({ items, stacked = false }: { items: Item[]; stacked?: 
               </h3>
               {it.place && <p className="text-sm text-faint">{it.place}</p>}
               {it.text && <p className="mt-2 text-sm leading-relaxed text-muted">{it.text}</p>}
-              {it.bullets && (
-                <ul className="mt-2 flex list-disc flex-col gap-1 pl-4 text-sm leading-relaxed text-muted marker:text-faint">
-                  {it.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              )}
+              {it.summary && <p className="mt-2 text-sm leading-relaxed text-muted">{it.summary}</p>}
+              {it.bullets &&
+                (it.summary ? (
+                  <details className="group/details mt-2">
+                    <summary className="inline-flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-accent hover:underline [&::-webkit-details-marker]:hidden">
+                      {detailsLabel}
+                      <span aria-hidden className="transition-transform group-open/details:rotate-90">›</span>
+                    </summary>
+                    <Bullets items={it.bullets} />
+                  </details>
+                ) : (
+                  <Bullets items={it.bullets} />
+                ))}
             </div>
           </div>
         </li>
       ))}
     </ol>
+  );
+}
+
+function Bullets({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-2 flex list-disc flex-col gap-1 pl-4 text-sm leading-relaxed text-muted marker:text-faint">
+      {items.map((b) => (
+        <li key={b}>{b}</li>
+      ))}
+    </ul>
   );
 }

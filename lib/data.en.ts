@@ -14,7 +14,7 @@ export const profile = {
   cv: "/cv-alexandre-machu.pdf",
   availability: "Available for a permanent role from December 2026",
   intro:
-    "Enterprise architect apprentice at Safran Electronics & Defense, finishing a master's in Information Systems Management at the Sorbonne and a university diploma in Influence and Cybersecurity. I come from software development, which helps me work with technical teams. I'm looking for a business analyst role, or a position in IT governance and cybersecurity.",
+    "Enterprise architect apprentice at Safran Electronics & Defense, with a software development background. I'm looking for a business analyst role, or a position in IT governance and cybersecurity.",
   photo: "/alexandre.webp",
 };
 
@@ -191,6 +191,7 @@ export const experiences: Item[] = [
     period: "Sept 2025 – Nov 2026",
     title: "Enterprise Architect (apprenticeship)",
     org: "Safran Electronics & Defense",
+    summary: "Mapping and rationalising the information systems of more than 80 sites worldwide in ARIS, and architecture documents to scope projects.",
     place: "Massy, France",
     logo: "/logos/safran.png",
     text: "",
@@ -206,6 +207,7 @@ export const experiences: Item[] = [
     period: "Nov 2023 – Apr 2024",
     title: "Esports Manager (freelance)",
     org: "SAN Esport",
+    summary: "Managed a women's League of Legends team in a national league, with a tracking tool connected to the Riot API.",
     logo: "/logos/san.png",
     place: "Montpellier / Paris",
     text: "",
@@ -219,6 +221,7 @@ export const experiences: Item[] = [
     period: "Sept 2023 – Aug 2024",
     title: "Web Developer (apprenticeship)",
     org: "CFD-Innovation",
+    summary: "Testing and continuous integration on a training SaaS, and a web rebuild of IBM i screens for a client POC.",
     place: "Baillargues, France",
     logo: "/logos/cfd.png",
     text: "",
@@ -232,6 +235,7 @@ export const experiences: Item[] = [
     period: "Jan – May 2023",
     title: "Programming Instructor (fixed-term)",
     org: "Écoles eSTIMe",
+    summary: "Sole instructor teaching programming and robotics to 100 pupils across 5 classes.",
     logo: "/logos/estime.png",
     place: "Montreal, Canada",
     text: "",
@@ -245,6 +249,7 @@ export const experiences: Item[] = [
     period: "Apr – Aug 2022",
     title: "Web Developer (internship, then fixed-term)",
     org: "Yooz",
+    summary: "Web rebuild of an internal tool in Angular and Node.js, in pairs and in sprints.",
     place: "Aimargues, France",
     logo: "/logos/yooz.png",
     text: "",
@@ -364,6 +369,15 @@ export const esport: Item[] = [
   },
 ];
 
+export const photos = [
+  { src: "/photos/esport-1.webp", alt: "Karmine Corp fans standing in the stands" },
+  { src: "/photos/esport-2.webp", alt: "Two Karmine Corp players on stage, in the smoke" },
+  { src: "/photos/esport-3.webp", alt: "Teams lined up on stage under the giant screen" },
+  { src: "/photos/esport-5.webp", alt: "On-stage interview after a match" },
+  { src: "/photos/esport-4.webp", alt: "A player with his hands on his head, in black and white" },
+  { src: "/photos/esport-6.webp", alt: "A player focused at his station during the draft" },
+];
+
 export const scouts: Item = {
   period: "Since 2021",
   title: "Scout camp director and leader",
@@ -383,7 +397,6 @@ export const passions: { emoji: string; value: string; label: string }[] = [
   { emoji: "🍓", value: "Top 1000", label: "Celeste speedrun" },
   { emoji: "🎹", value: "16 years", label: "Piano" },
   { emoji: "🏐", value: "6 years", label: "Volleyball" },
-  { emoji: "🍳", value: "Cooking", label: "" },
   { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650" },
   { emoji: "🚆", value: "Rails", label: "Metros, trains, planes" },
 ];

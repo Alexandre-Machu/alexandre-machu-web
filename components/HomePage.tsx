@@ -6,7 +6,7 @@ import { content, ui, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = ui[lang];
-  const { education, esport, experiences, highlights, passions, profile, projects, scouts, skills } =
+  const { education, esport, experiences, highlights, passions, photos, profile, projects, scouts, skills } =
     content[lang];
   const featured = projects.filter((p) => p.featured);
 
@@ -62,6 +62,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <BehanceIcon size={18} />
             </a>
           </div>
+
         </div>
       </section>
 
@@ -85,7 +86,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <h3 className="mb-4 text-sm font-medium text-muted">{t.experiences}</h3>
-            <Timeline items={experiences} />
+            <Timeline items={experiences} detailsLabel={t.showDetails} />
           </div>
           <div>
             <h3 className="mb-4 text-sm font-medium text-muted">{t.education}</h3>
@@ -198,6 +199,23 @@ export default function HomePage({ lang }: { lang: Lang }) {
               </span>
             </a>
           </div>
+
+          <div className="mt-20">
+            <h3 className="font-serif text-3xl tracking-tight sm:text-4xl">{t.galleryTitle}</h3>
+            <p className="mt-2 text-sm text-white/60">{t.galleryIntro}</p>
+            <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+              {photos.map((ph) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={ph.src}
+                  src={ph.src}
+                  alt={ph.alt}
+                  loading="lazy"
+                  className="mb-4 w-full break-inside-avoid rounded-xl ring-1 ring-white/10"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -220,7 +238,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
           </div>
         </article>
 
-        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {passions.map((p) => (
             <article key={p.label} className="group rounded-2xl border border-line bg-card p-6">
               <div className="flex items-start justify-between gap-3">

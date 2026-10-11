@@ -11,7 +11,7 @@ export const profile = {
   cv: "/cv-alexandre-machu.pdf",
   availability: "Disponible en CDI à partir de décembre 2026",
   intro:
-    "Architecte d'entreprise en alternance chez Safran Electronics & Defense, en M2 Management des SI à la Sorbonne et en DU Influence et Cybersécurité. Je viens du développement, ce qui m'aide à comprendre les équipes techniques. Je cherche un CDI de business analyst, ou un poste côté gouvernance et cybersécurité.",
+    "Architecte d'entreprise en alternance chez Safran Electronics & Defense, je viens du développement. Je cherche un CDI de business analyst, ou un poste en gouvernance et cybersécurité.",
   photo: "/alexandre.webp",
 };
 
@@ -214,6 +214,8 @@ export type Item = {
   place?: string;
   text: string;
   bullets?: string[];
+  /** Une phrase affichée à la place des puces, qui restent dépliables */
+  summary?: string;
   /** Logo dans public/logos, sinon on affiche les initiales */
   logo?: string;
 };
@@ -223,6 +225,7 @@ export const experiences: Item[] = [
     period: "sept. 2025 – nov. 2026",
     title: "Architecte d'entreprise (alternance)",
     org: "Safran Electronics & Defense",
+    summary: "Cartographie et rationalisation du SI de plus de 80 sites dans le monde sous ARIS, et dossiers d'architecture pour cadrer les projets.",
     place: "Massy",
     logo: "/logos/safran.png",
     text: "",
@@ -238,6 +241,7 @@ export const experiences: Item[] = [
     period: "nov. 2023 – avr. 2024",
     title: "Manager esport (freelance)",
     org: "SAN Esport",
+    summary: "Gestion d'une équipe League of Legends féminine en championnat national, avec un outil de suivi branché sur l'API Riot.",
     logo: "/logos/san.png",
     place: "Montpellier / Paris",
     text: "",
@@ -251,6 +255,7 @@ export const experiences: Item[] = [
     period: "sept. 2023 – août 2024",
     title: "Développeur web (alternance)",
     org: "CFD-Innovation",
+    summary: "Tests et intégration continue sur un SaaS de formation, et refonte web d'écrans IBM i pour un POC client.",
     place: "Baillargues",
     logo: "/logos/cfd.png",
     text: "",
@@ -264,6 +269,7 @@ export const experiences: Item[] = [
     period: "janv. – mai 2023",
     title: "Formateur en programmation (CDD)",
     org: "Écoles eSTIMe",
+    summary: "Seul intervenant pour initier 100 élèves de 5 classes à la programmation et à la robotique.",
     logo: "/logos/estime.png",
     place: "Montréal",
     text: "",
@@ -277,6 +283,7 @@ export const experiences: Item[] = [
     period: "avr. – août 2022",
     title: "Développeur web (stage puis CDD)",
     org: "Yooz",
+    summary: "Refonte web d'un outil interne en Angular et Node.js, en binôme et en sprints.",
     place: "Aimargues",
     logo: "/logos/yooz.png",
     text: "",
@@ -397,6 +404,16 @@ export const esport: Item[] = [
   },
 ];
 
+/** Photos prises par Alexandre en événement esport (public/photos) */
+export const photos = [
+  { src: "/photos/esport-1.webp", alt: "Supporters de Karmine Corp debout dans les tribunes" },
+  { src: "/photos/esport-2.webp", alt: "Deux joueurs de Karmine Corp sur scène, dans la fumée" },
+  { src: "/photos/esport-3.webp", alt: "Les équipes alignées sur scène sous l'écran géant" },
+  { src: "/photos/esport-5.webp", alt: "Interview sur scène après un match" },
+  { src: "/photos/esport-4.webp", alt: "Un joueur, les mains sur la tête, en noir et blanc" },
+  { src: "/photos/esport-6.webp", alt: "Un joueur concentré à son poste pendant la draft" },
+];
+
 export const scouts: Item = {
   period: "Depuis 2021",
   title: "Directeur et responsable de camps scouts",
@@ -417,7 +434,6 @@ export const passions: { emoji: string; value: string; label: string }[] = [
   { emoji: "🍓", value: "Top 1000", label: "Speedrun de Celeste" },
   { emoji: "🎹", value: "16 ans", label: "Piano" },
   { emoji: "🏐", value: "6 ans", label: "Volley-ball" },
-  { emoji: "🍳", value: "Cuisine", label: "" },
   { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650" },
   { emoji: "🚆", value: "Rails", label: "Métros, trains, avions" },
 ];

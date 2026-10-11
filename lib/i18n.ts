@@ -55,6 +55,9 @@ export const ui = {
     playerText:
       "Sur League of Legends, top et support, 6 titres en compétition.",
     seeOpgg: "Mon profil op.gg",
+    galleryTitle: "Derrière l'objectif",
+    galleryIntro: "Mes photos, prises en bord de scène.",
+    showDetails: "Voir le détail",
     behance: "Mes visuels sur Behance",
     outsideLabel: "En dehors",
     outsideTitle: "Le reste du temps",
@@ -108,6 +111,9 @@ export const ui = {
     playerText:
       "On League of Legends, top and support, 6 competitive titles.",
     seeOpgg: "My op.gg profile",
+    galleryTitle: "Behind the lens",
+    galleryIntro: "My photos, taken from the side of the stage.",
+    showDetails: "Show details",
     behance: "My work on Behance",
     outsideLabel: "Outside work",
     outsideTitle: "The rest of the time",
