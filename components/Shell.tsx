@@ -18,9 +18,9 @@ const serif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-export const SITE_URL = "https://alexandre-machu-web.vercel.app";
+export const SITE_URL = "https://www.alexandremachu.fr";
 
-// Métadonnées communes, déclinées par langue. À changer (SITE_URL) quand le nom de domaine sera branché.
+// Métadonnées communes, déclinées par langue. SITE_URL = domaine principal (alexandremachu.fr redirige vers www).
 export function siteMetadata(lang: Lang): Metadata {
   const t = ui[lang];
   return {

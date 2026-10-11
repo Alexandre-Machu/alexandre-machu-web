@@ -44,7 +44,7 @@ export function ogImage(lang: Lang) {
           }}
         >
           <span>{t.ogFooter}</span>
-          <span>alexandre-machu-web.vercel.app</span>
+          <span>alexandremachu.fr</span>
         </div>
       </div>
     ),

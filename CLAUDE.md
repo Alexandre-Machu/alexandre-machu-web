@@ -53,7 +53,7 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 
 ## Prochaines étapes
 
-1. En ligne sur https://alexandre-machu-web.vercel.app depuis le 11 oct. 2026 (Vercel, compte Alex, redéploie à chaque push sur main). Reste : image Open Graph pour LinkedIn, éventuellement un nom de domaine (ex. alexandre-machu.fr).
+1. En ligne sur https://www.alexandremachu.fr (domaine OVH d'Alex, A @ et CNAME www vers Vercel ; alexandremachu.fr redirige en 308 vers www) et https://alexandre-machu-web.vercel.app. Vercel redéploie à chaque push sur main. Ne pas toucher aux enregistrements mail de la zone OVH (MX, SPF, DKIM, SRV).
 2. CV sources : `OneDrive\Pro\CVs\7. CV CDI 2026\CV_MACHU-Alexandre_BusinessAnalyst-FR.pdf` et `-EN.pdf`, copiés dans `public/cv-alexandre-machu.pdf` et `public/cv-alexandre-machu-en.pdf`. Les intitulés du site (FR et EN) suivent ceux des CV.
 
 ## Commandes
