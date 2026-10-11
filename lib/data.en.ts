@@ -10,6 +10,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/alexandre-machu/",
   github: "https://github.com/Alexandre-Machu",
   behance: "https://www.behance.net/alexandremachu",
+  opgg: "https://op.gg/lol/summoners/euw/Colfeo-MALOU",
   cv: "/cv-alexandre-machu.pdf",
   availability: "Available for a permanent role from December 2026",
   intro:
@@ -378,13 +379,13 @@ export const highlights = [
   { value: "BAFD", label: "scout camp director since 2024" },
 ];
 
-export const passions: { emoji: string; value: string; label: string; detail: string }[] = [
-  { emoji: "🍓", value: "Top 1000", label: "Celeste speedrun", detail: "Worldwide, any%. I leave the strawberries to others." },
-  { emoji: "🎹", value: "16 years", label: "Piano", detail: "Without being able to read sheet music." },
-  { emoji: "🏐", value: "6 years", label: "Volleyball", detail: "" },
-  { emoji: "📸", value: "Photo", label: "Mostly esports", detail: "Dark and high-contrast, from the side of the stage." },
-  { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650", detail: "A2 licence." },
-  { emoji: "🚆", value: "Rails", label: "Metros, trains, planes", detail: "A constant in my life." },
+export const passions: { emoji: string; value: string; label: string }[] = [
+  { emoji: "🍓", value: "Top 1000", label: "Celeste speedrun" },
+  { emoji: "🎹", value: "16 years", label: "Piano" },
+  { emoji: "🏐", value: "6 years", label: "Volleyball" },
+  { emoji: "🍳", value: "Cooking", label: "" },
+  { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650" },
+  { emoji: "🚆", value: "Rails", label: "Metros, trains, planes" },
 ];
 
 export const skills = [

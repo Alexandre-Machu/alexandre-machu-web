@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
 import { FeaturedProject } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
 import { BehanceIcon, GithubIcon, LinkedinIcon } from "@/components/Icons";
-import { content, projectHref, ui, type Lang } from "@/lib/i18n";
+import { content, ui, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = ui[lang];
@@ -178,20 +177,26 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 <p className="mt-4 text-sm leading-relaxed text-white/70">{e.text}</p>
               </article>
             ))}
-            <Link
-              href={projectHref(lang, "occilanscout")}
+            <a
+              href={profile.opgg}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-[#ff4655]/20 to-transparent p-6 hover:border-white/25"
             >
               <p className="text-xs uppercase tracking-[0.14em] text-white/50">{t.player}</p>
               <div>
-                <p className="mt-6 font-serif text-5xl tracking-tight">Master</p>
+                <div className="mt-6 flex items-center gap-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/logos/master.svg" alt="" className="h-14 w-auto" />
+                  <p className="font-serif text-5xl tracking-tight">Master</p>
+                </div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">{t.playerText}</p>
               </div>
               <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[#ff7a85]">
-                {t.seeOccilan}
+                {t.seeOpgg}
                 <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -201,7 +206,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
         id="ailleurs"
         label={t.outsideLabel}
         title={t.outsideTitle}
-        intro={t.outsideIntro}
       >
         <article className="flex flex-col gap-6 rounded-2xl border border-line bg-card p-6 sm:flex-row sm:items-center sm:p-8">
           <div className="sm:w-56 sm:shrink-0">
@@ -225,8 +229,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
                   {p.emoji}
                 </span>
               </div>
-              <h3 className="mt-3 font-medium">{p.label}</h3>
-              {p.detail && <p className="mt-1 text-sm leading-relaxed text-muted">{p.detail}</p>}
+              {p.label && <h3 className="mt-3 font-medium">{p.label}</h3>}
             </article>
           ))}
         </div>

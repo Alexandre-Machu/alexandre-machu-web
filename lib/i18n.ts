@@ -53,13 +53,11 @@ export const ui = {
       "Séminaire « Esport : un nouveau terrain pour les sciences du sport », Université Paris-Saclay, septembre 2026.",
     player: "Joueur",
     playerText:
-      "Sur League of Legends, top et support, 6 titres en compétition. Pour préparer les tournois de mon équipe, j'ai fait OccilanScout.",
-    seeOccilan: "Voir OccilanScout",
+      "Sur League of Legends, top et support, 6 titres en compétition.",
+    seeOpgg: "Mon profil op.gg",
     behance: "Mes visuels sur Behance",
     outsideLabel: "En dehors",
-    outsideTitle: "Ce qui me fait tenir",
-    outsideIntro:
-      "Depuis l'adolescence, je monte des groupes autour de ce qui me plaît : les scouts d'abord, puis les assos esport. Le reste du temps, il y a de quoi faire.",
+    outsideTitle: "Le reste du temps",
     scoutsStat: "enfants encadrés chaque été",
     contactLabel: "Contact",
     contactTitle: "Un poste, un projet, une question ? Écrivez-moi.",
@@ -108,13 +106,11 @@ export const ui = {
       "\"Esports: a new field for sport sciences\" seminar, Université Paris-Saclay, September 2026.",
     player: "Player",
     playerText:
-      "On League of Legends, top and support, 6 competitive titles. To prepare my team's tournaments, I built OccilanScout.",
-    seeOccilan: "See OccilanScout",
+      "On League of Legends, top and support, 6 competitive titles.",
+    seeOpgg: "My op.gg profile",
     behance: "My work on Behance",
     outsideLabel: "Outside work",
-    outsideTitle: "What keeps me going",
-    outsideIntro:
-      "Since my teens, I've been building groups around the things I love: scouting first, then esports societies. The rest of the time, there's plenty going on.",
+    outsideTitle: "The rest of the time",
     scoutsStat: "children in my care every summer",
     contactLabel: "Contact",
     contactTitle: "A role, a project, a question? Write to me.",

@@ -7,6 +7,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/alexandre-machu/",
   github: "https://github.com/Alexandre-Machu",
   behance: "https://www.behance.net/alexandremachu",
+  opgg: "https://op.gg/lol/summoners/euw/Colfeo-MALOU",
   cv: "/cv-alexandre-machu.pdf",
   availability: "Disponible en CDI à partir de décembre 2026",
   intro:
@@ -412,13 +413,13 @@ export const highlights = [
   { value: "BAFD", label: "directeur de camps scouts depuis 2024" },
 ];
 
-export const passions: { emoji: string; value: string; label: string; detail: string }[] = [
-  { emoji: "🍓", value: "Top 1000", label: "Speedrun de Celeste", detail: "Mondial, en any%. Les fraises, je les laisse aux autres." },
-  { emoji: "🎹", value: "16 ans", label: "Piano", detail: "Sans savoir lire une partition." },
-  { emoji: "🏐", value: "6 ans", label: "Volley-ball", detail: "" },
-  { emoji: "📸", value: "Photo", label: "Surtout en esport", detail: "Sombre et contrasté, depuis le bord de la scène." },
-  { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650", detail: "Permis A2." },
-  { emoji: "🚆", value: "Rails", label: "Métros, trains, avions", detail: "Une constante chez moi." },
+export const passions: { emoji: string; value: string; label: string }[] = [
+  { emoji: "🍓", value: "Top 1000", label: "Speedrun de Celeste" },
+  { emoji: "🎹", value: "16 ans", label: "Piano" },
+  { emoji: "🏐", value: "6 ans", label: "Volley-ball" },
+  { emoji: "🍳", value: "Cuisine", label: "" },
+  { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650" },
+  { emoji: "🚆", value: "Rails", label: "Métros, trains, avions" },
 ];
 
 export const skills = [
