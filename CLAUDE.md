@@ -43,15 +43,16 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 
 - Première version terminée, `npm run build` passe. Vérifiée en captures desktop et mobile (375 px, pas de débordement).
 - `node_modules` a été réinstallé proprement après un plantage de l'appli pendant l'install (binaire SWC et lucide-react corrompus).
-- Premier commit fait en local le 11 oct. 2026, pas encore poussé sur GitHub (à faire avec l'accord d'Alex).
+- Poussé sur GitHub le 11 oct. 2026. Le site est calqué sur le CV Business Analyst (même titre, expériences, dates, formation, compétences). Règle : quand le CV change, répercuter sur le site.
+- Idée directrice validée par Alex : partir du CV, et montrer en plus les side projects et le reste (missions hors CV, assos, centres d'intérêt). Un « brief » plus lourd (section à propos, différenciateurs, chasse aux chiffres) a été écarté le 11 oct., ne pas le ressortir.
 - Alex n'est plus président de Paris 1 Esport (il a passé la main) : le site affiche « Co-fondateur et ancien président ».
 - Captures OccilanScout (app publique) et Alex OS ajoutées dans `public/projets/`. Alex OS est privé et contient de vraies données bancaires : sa capture est faite sur son `index.html` en local avec des données fictives (google.script.run simulé), jamais sur l'appli en ligne.
 - Pour capturer une page lente (Streamlit), Edge headless en ligne de commande ne suffit pas : lancer Edge avec `--remote-debugging-port` et appeler `Page.captureScreenshot` après une vraie attente (Node 22 a WebSocket en natif).
 
 ## Prochaines étapes
 
-1. Aligner le site sur le CV Business Analyst (`public/cv-alexandre-machu.pdf`, source : `OneDrive\Pro\CVs\7. CV CDI 2026\`) : titre, intro, expériences.
-2. Choisir l'hébergement et éventuellement un nom de domaine (ex. alexandre-machu.fr).
+1. Mise en ligne sur Vercel (import du repo GitHub, à faire par Alex car il faut se connecter), puis éventuellement un nom de domaine (ex. alexandre-machu.fr).
+2. Le CV source est `OneDrive\Pro\CVs\7. CV CDI 2026\CV_MACHU-Alexandre_BusinessAnalyst.pdf`, copié dans `public/cv-alexandre-machu.pdf`.
 
 ## Commandes
 
