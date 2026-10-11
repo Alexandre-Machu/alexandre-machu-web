@@ -17,6 +17,15 @@ const serif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  // À changer quand le nom de domaine sera branché.
+  metadataBase: new URL("https://alexandre-machu-web.vercel.app"),
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Alexandre Machu",
+    title: "Alexandre Machu · Business Analyst SI",
+    description: "Business Analyst SI venu du développement. Parcours, projets et CV.",
+  },
   title: {
     default: "Alexandre Machu",
     template: "%s · Alexandre Machu",
