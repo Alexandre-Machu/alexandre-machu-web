@@ -2,16 +2,17 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/data";
 import ProjectVisual from "./ProjectVisual";
+import { projectHref, ui, type Lang } from "@/lib/i18n";
 
-export function FeaturedProject({ project, index }: { project: Project; index: number }) {
+export function FeaturedProject({ project, index, lang }: { project: Project; index: number; lang: Lang }) {
   const flip = index % 2 === 1;
   return (
     <Link
-      href={`/projets/${project.slug}`}
+      href={projectHref(lang, project.slug)}
       className="group grid items-center gap-6 md:grid-cols-2 md:gap-10"
     >
       <div className={flip ? "md:order-2" : ""}>
-        <ProjectVisual project={project} priority={index === 0} />
+        <ProjectVisual project={project} priority={index === 0} lang={lang} />
       </div>
       <div>
         <p className="text-xs font-medium uppercase tracking-[0.14em] text-faint">
@@ -28,7 +29,7 @@ export function FeaturedProject({ project, index }: { project: Project; index: n
           ))}
         </div>
         <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent">
-          Voir le projet
+          {ui[lang].seeProject}
           <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </span>
       </div>
@@ -36,13 +37,13 @@ export function FeaturedProject({ project, index }: { project: Project; index: n
   );
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, lang }: { project: Project; lang: Lang }) {
   return (
     <Link
-      href={`/projets/${project.slug}`}
+      href={projectHref(lang, project.slug)}
       className="group flex flex-col rounded-2xl border border-line bg-card p-3 transition-shadow hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)]"
     >
-      <ProjectVisual project={project} small />
+      <ProjectVisual project={project} small lang={lang} />
       <div className="flex flex-1 flex-col px-2 pb-2 pt-4">
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-semibold tracking-tight">{project.title}</h3>

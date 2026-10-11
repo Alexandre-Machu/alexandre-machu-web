@@ -24,11 +24,12 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 
 ## Structure
 
-- `lib/data.ts` : tout le contenu (profil, projets, game jams, expériences, formation, engagements, compétences). C'est le seul fichier à toucher pour modifier le texte ou ajouter un projet.
-- `app/page.tsx` : page unique (accueil, projets, parcours, formation, compétences, engagements, contact).
-- `app/projets/[slug]/page.tsx` : page détail par projet (contexte, ce qui a été fait, stack, liens).
-- `components/` : Navbar, Footer, Icons (logos GitHub/LinkedIn, absents de lucide), ProjectCard, ProjectVisual (capture ou vignette colorée), Section (dont Timeline).
-- `public/projets/` : visuels (captures P1E et BagExpress faites avec Edge headless, logos des game jams récupérés de l'ancien site CV).
+- Site bilingue : français sur `/`, anglais sur `/en` (projets : `/projets/<slug>` et `/en/projects/<slug>`). Deux layouts racines via les groupes `app/(fr)` et `app/(en)`, bouton FR / EN dans la nav (`components/LangSwitch.tsx`).
+- `lib/data.ts` (français) et `lib/data.en.ts` (anglais) : tout le contenu, mêmes exports dans le même ordre. **Toute modif de l'un se reporte dans l'autre.**
+- `lib/i18n.ts` : textes d'interface des deux langues, helpers de liens (`projectHref`, `switchPath`).
+- `components/HomePage.tsx` et `components/ProjectPage.tsx` : les pages, avec un paramètre `lang`. `components/Shell.tsx` : html, polices, métadonnées (hreflang, Open Graph, `SITE_URL` à changer avec le nom de domaine).
+- Images d'aperçu : `/og/fr.png` et `/og/en.png`, générées au build par `lib/og.tsx` via des route handlers.
+- `public/` : `projets/` (captures), `logos/`, `alexandre.webp` (photo pro), `esport-micro.jpg` (séminaire esport Paris-Saclay, sept. 2026), CV.
 
 ## Décisions prises
 

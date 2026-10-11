@@ -1,14 +1,13 @@
 import { ImageResponse } from "next/og";
-import { profile } from "@/lib/data";
+import { content, ui, type Lang } from "@/lib/i18n";
 
-// Aperçu affiché quand le lien est partagé (LinkedIn, Discord, mails).
-export const alt = `${profile.name}, ${profile.role}`;
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-// Requis par output: "export" : l'image est générée une fois au build.
-export const dynamic = "force-static";
+// Aperçu affiché quand le lien est partagé (LinkedIn, Discord, mails), une version par langue.
+export const ogSize = { width: 1200, height: 630 };
 
-export default function Image() {
+
+export function ogImage(lang: Lang) {
+  const { profile } = content[lang];
+  const t = ui[lang];
   return new ImageResponse(
     (
       <div
@@ -31,7 +30,7 @@ export default function Image() {
           <div style={{ fontSize: 30, letterSpacing: 4, color: "#2f4fd8" }}>{profile.role.toUpperCase()}</div>
           <div style={{ marginTop: 18, fontSize: 104, letterSpacing: -3, lineHeight: 1 }}>{profile.name}</div>
           <div style={{ marginTop: 28, fontSize: 34, color: "#6b6b73", maxWidth: 900 }}>
-            Venu du développement. Référentiels applicatifs et qualité de données, en alternance chez Safran.
+            {t.ogTagline}
           </div>
         </div>
         <div
@@ -44,11 +43,11 @@ export default function Image() {
             color: "#6b6b73",
           }}
         >
-          <span>Parcours · Projets · CV</span>
+          <span>{t.ogFooter}</span>
           <span>alexandre-machu-web.vercel.app</span>
         </div>
       </div>
     ),
-    size,
+    ogSize,
   );
 }

@@ -4,31 +4,29 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import ProjectVisual from "@/components/ProjectVisual";
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/lib/data";
+import { content, homeHref, ui, type Lang } from "@/lib/i18n";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+export function projectMetadata(lang: Lang, slug: string): Metadata {
+  const project = content[lang].projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
     title: project.title,
     description: project.tagline,
+    alternates: {
+      canonical: lang === "fr" ? `/projets/${slug}` : `/en/projects/${slug}`,
+      languages: { fr: `/projets/${slug}`, en: `/en/projects/${slug}` },
+    },
     openGraph: {
       title: `${project.title} · Alexandre Machu`,
       description: project.tagline,
-      images: [project.image ?? "/opengraph-image"],
+      images: [project.image ?? `/og/${lang}.png`],
     },
   };
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function ProjectPage({ lang, slug }: { lang: Lang; slug: string }) {
+  const t = ui[lang];
+  const { projects } = content[lang];
   const index = projects.findIndex((p) => p.slug === slug);
   if (index === -1) notFound();
   const project = projects[index];
@@ -36,8 +34,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="mx-auto max-w-5xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
-      <Link href="/#projets" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
-        <ArrowLeft size={15} /> Tous les projets
+      <Link href={`${homeHref(lang)}#projets`} className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
+        <ArrowLeft size={15} /> {t.allProjects}
       </Link>
 
       <header className="rise mt-10 max-w-3xl">
@@ -68,15 +66,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </header>
 
       <div className="mt-12">
-        <ProjectVisual project={project} priority wide />
+        <ProjectVisual project={project} priority wide lang={lang} />
       </div>
 
       <div className="mt-14 grid gap-12 md:grid-cols-[1fr_15rem]">
         <div className="max-w-2xl">
-          <h2 className="font-serif text-3xl">Le point de départ</h2>
+          <h2 className="font-serif text-3xl">{t.startingPoint}</h2>
           <p className="mt-4 leading-relaxed text-muted">{project.context}</p>
 
-          <h2 className="mt-12 font-serif text-3xl">Ce que j&apos;ai fait</h2>
+          <h2 className="mt-12 font-serif text-3xl">{t.whatIDid}</h2>
           <ul className="mt-5 flex flex-col gap-4">
             {project.built.map((b) => (
               <li key={b} className="flex gap-3 leading-relaxed text-muted">
@@ -92,7 +90,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
 
         <aside className="md:border-l md:border-line md:pl-8">
-          <h2 className="text-sm font-medium">Stack</h2>
+          <h2 className="text-sm font-medium">{t.stack}</h2>
           <ul className="mt-3 flex flex-wrap gap-1.5 md:flex-col md:gap-2">
             {project.stack.map((s) => (
               <li key={s} className="rounded-full border border-line bg-card px-2.5 py-1 text-xs text-muted md:border-0 md:bg-transparent md:p-0 md:text-sm">
@@ -104,10 +102,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </div>
 
       <section className="mt-24 border-t border-line pt-12">
-        <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-faint">Autres projets</h2>
+        <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.otherProjects}</h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2">
           {next.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+            <ProjectCard key={p.slug} project={p} lang={lang} />
           ))}
         </div>
       </section>

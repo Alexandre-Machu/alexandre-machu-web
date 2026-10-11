@@ -1,23 +1,14 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
 import { FeaturedProject, ProjectCard } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import {
-  education,
-  esport,
-  experiences,
-  extras,
-  highlights,
-  jams,
-  passions,
-  profile,
-  projects,
-  scouts,
-  skills,
-} from "@/lib/data";
+import { content, projectHref, ui, type Lang } from "@/lib/i18n";
 
-export default function Home() {
+export default function HomePage({ lang }: { lang: Lang }) {
+  const t = ui[lang];
+  const { education, esport, experiences, extras, highlights, jams, passions, profile, projects, scouts, skills } =
+    content[lang];
   const featured = projects.filter((p) => p.featured);
   const others = projects.filter((p) => !p.featured);
 
@@ -35,14 +26,14 @@ export default function Home() {
               {profile.role}
             </p>
             <h1 className="rise mt-4 max-w-3xl text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl" style={{ animationDelay: "60ms" }}>
-              Je fais le lien entre{" "}
-              <span className="font-serif font-normal italic text-accent pr-1">les métiers</span>{" "}et l&apos;IT.
+              {t.heroBefore}{" "}
+              <span className="font-serif font-normal italic text-accent pr-1">{t.heroEm}</span> {t.heroAfter}
             </h1>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={profile.photo}
-            alt="Portrait d'Alexandre Machu"
+            alt={t.photoAlt}
             className="rise order-first h-28 w-28 rounded-full bg-white object-cover ring-1 ring-line md:order-none md:h-56 md:w-56"
             style={{ animationDelay: "90ms" }}
           />
@@ -52,10 +43,10 @@ export default function Home() {
         </p>
         <div className="rise mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "180ms" }}>
           <a href={profile.cv} className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper hover:opacity-85">
-            <Download size={15} /> Télécharger le CV
+            <Download size={15} /> {t.downloadCv}
           </a>
           <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-5 py-2.5 text-sm font-medium hover:border-ink/30">
-            <Mail size={15} /> Me contacter
+            <Mail size={15} /> {t.contactMe}
           </a>
           <div className="ml-1 flex items-center gap-1">
             <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-full p-2.5 text-muted hover:bg-card hover:text-ink">
@@ -69,7 +60,7 @@ export default function Home() {
       </section>
 
       {/* Chiffres */}
-      <section aria-label="En quelques chiffres" className="border-y border-line bg-card/60">
+      <section aria-label={t.highlightsAria} className="border-y border-line bg-card/60">
         <dl className="mx-auto grid max-w-5xl grid-cols-2 gap-px px-4 sm:px-6 md:grid-cols-4">
           {highlights.map((h) => (
             <div key={h.label} className="py-8 pr-4">
@@ -84,18 +75,18 @@ export default function Home() {
       </section>
 
       {/* Parcours */}
-      <Section id="parcours" label="Parcours" title="Expériences et formation">
+      <Section id="parcours" label={t.parcoursLabel} title={t.parcoursTitle}>
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h3 className="mb-4 text-sm font-medium text-muted">Expériences</h3>
+            <h3 className="mb-4 text-sm font-medium text-muted">{t.experiences}</h3>
             <Timeline items={experiences} />
-            <h3 className="mb-4 mt-10 text-sm font-medium text-muted">Autres missions</h3>
+            <h3 className="mb-4 mt-10 text-sm font-medium text-muted">{t.extras}</h3>
             <Timeline items={extras} />
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-medium text-muted">Formation</h3>
+            <h3 className="mb-4 text-sm font-medium text-muted">{t.education}</h3>
             <Timeline items={education} stacked />
-            <h3 className="mb-4 mt-10 text-sm font-medium text-muted">Compétences</h3>
+            <h3 className="mb-4 mt-10 text-sm font-medium text-muted">{t.skills}</h3>
             <div className="flex flex-col gap-5">
               {skills.map((g) => (
                 <div key={g.label}>
@@ -119,32 +110,29 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-24">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.14em] text-accent">Projets</p>
-              <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">Des outils pour de vrais besoins</h2>
-              <p className="mt-5 max-w-2xl leading-relaxed text-muted">
-                Chaque projet part d&apos;un problème concret, le mien ou celui d&apos;un groupe : préparer un tournoi, faire
-                vivre une asso, tenir un budget. Je commence par comprendre le besoin, puis je construis l&apos;outil.
-              </p>
+              <p className="text-xs font-medium uppercase tracking-[0.14em] text-accent">{t.projectsLabel}</p>
+              <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">{t.projectsTitle}</h2>
+              <p className="mt-5 max-w-2xl leading-relaxed text-muted">{t.projectsIntro}</p>
             </div>
             <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted hover:text-ink">
-              <GithubIcon size={15} /> Tout sur GitHub
+              <GithubIcon size={15} /> {t.allOnGithub}
             </a>
           </div>
 
           <div className="mt-14 flex flex-col gap-20">
             {featured.map((p, i) => (
-              <FeaturedProject key={p.slug} project={p} index={i} />
+              <FeaturedProject key={p.slug} project={p} index={i} lang={lang} />
             ))}
           </div>
 
-          <h3 className="mt-24 text-sm font-medium uppercase tracking-[0.14em] text-faint">Autres projets</h3>
+          <h3 className="mt-24 text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.otherProjects}</h3>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
+              <ProjectCard key={p.slug} project={p} lang={lang} />
             ))}
           </div>
 
-          <h3 className="mt-16 text-sm font-medium uppercase tracking-[0.14em] text-faint">Game jams & concours</h3>
+          <h3 className="mt-16 text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.jams}</h3>
           <ul className="mt-6 grid gap-3 sm:grid-cols-3">
             {jams.map((j) => (
               <li key={j.title} className="flex items-center gap-4 rounded-xl border border-line bg-card p-3">
@@ -172,26 +160,19 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-24">
           <div className="grid items-end gap-10 md:grid-cols-[1fr_300px]">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ff4655]">Esport</p>
-              <h2 className="mt-3 max-w-3xl font-serif text-4xl tracking-tight sm:text-6xl">
-                L&apos;autre moitié de mon parcours.
-              </h2>
-              <p className="mt-5 max-w-2xl leading-relaxed text-white/70">
-                Joueur, manager, président d&apos;asso, staff, photographe. Depuis 2023 j&apos;ai pris à peu près tous les
-                rôles autour d&apos;un tournoi. J&apos;y fais ce que je fais au travail : organiser, outiller, tenir un groupe.
-              </p>
+              <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ff4655]">{t.esportLabel}</p>
+              <h2 className="mt-3 max-w-3xl font-serif text-4xl tracking-tight sm:text-6xl">{t.esportTitle}</h2>
+              <p className="mt-5 max-w-2xl leading-relaxed text-white/70">{t.esportIntro}</p>
             </div>
             <figure className="md:w-[300px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/esport-micro.jpg"
-                alt="Alexandre au micro, posant une question pendant une conférence sur l'esport"
+                alt={t.esportPhotoAlt}
                 className="aspect-[4/5] w-full rounded-2xl object-cover object-top ring-1 ring-white/10"
                 loading="lazy"
               />
-              <figcaption className="mt-3 text-xs leading-relaxed text-white/60">
-                Journée de conférences sur l&apos;esport à Paris-Saclay, organisée par Nicolas Besombes.
-              </figcaption>
+              <figcaption className="mt-3 text-xs leading-relaxed text-white/60">{t.esportCaption}</figcaption>
             </figure>
           </div>
 
@@ -213,19 +194,16 @@ export default function Home() {
               </article>
             ))}
             <Link
-              href="/projets/occilanscout"
+              href={projectHref(lang, "occilanscout")}
               className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-[#ff4655]/20 to-transparent p-6 hover:border-white/25"
             >
-              <p className="text-xs uppercase tracking-[0.14em] text-white/50">Joueur</p>
+              <p className="text-xs uppercase tracking-[0.14em] text-white/50">{t.player}</p>
               <div>
                 <p className="mt-6 font-serif text-5xl tracking-tight">Master</p>
-                <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Sur League of Legends, top et support, 6 titres en compétition. Pour préparer les tournois de mon équipe,
-                  j&apos;ai fait OccilanScout.
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">{t.playerText}</p>
               </div>
               <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[#ff7a85]">
-                Voir OccilanScout
+                {t.seeOccilan}
                 <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </span>
             </Link>
@@ -236,14 +214,14 @@ export default function Home() {
       {/* En dehors */}
       <Section
         id="ailleurs"
-        label="En dehors"
-        title="Ce qui me fait tenir"
-        intro="Depuis l'adolescence, je monte des groupes autour de ce qui me plaît : les scouts d'abord, puis les assos esport. Le reste du temps, il y a de quoi faire."
+        label={t.outsideLabel}
+        title={t.outsideTitle}
+        intro={t.outsideIntro}
       >
         <article className="flex flex-col gap-6 rounded-2xl border border-line bg-card p-6 sm:flex-row sm:items-center sm:p-8">
           <div className="sm:w-56 sm:shrink-0">
             <p className="font-serif text-5xl tracking-tight text-accent">35</p>
-            <p className="mt-1 text-sm text-muted">enfants encadrés chaque été</p>
+            <p className="mt-1 text-sm text-muted">{t.scoutsStat}</p>
           </div>
           <div>
             <p className="text-xs tabular-nums text-faint">{scouts.period} · {scouts.place}</p>
@@ -267,10 +245,8 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="border-t border-line bg-ink text-paper">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-24">
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-paper/60">Contact</p>
-          <h2 className="mt-3 max-w-2xl font-serif text-4xl tracking-tight sm:text-5xl">
-            Un poste, un projet, une question ? Écrivez-moi.
-          </h2>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-paper/60">{t.contactLabel}</p>
+          <h2 className="mt-3 max-w-2xl font-serif text-4xl tracking-tight sm:text-5xl">{t.contactTitle}</h2>
           <div className="mt-10 flex flex-wrap gap-3">
             <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink hover:opacity-90">
               <Mail size={15} /> {profile.email}
@@ -279,15 +255,12 @@ export default function Home() {
               <LinkedinIcon size={15} /> LinkedIn
             </a>
             <a href={profile.cv} className="inline-flex items-center gap-2 rounded-full border border-paper/20 px-5 py-2.5 text-sm font-medium hover:border-paper/50">
-              <Download size={15} /> CV en PDF
+              <Download size={15} /> {t.cvPdf}
             </a>
           </div>
           <p className="mt-8 inline-flex items-center gap-2 text-sm text-paper/60">
-            <MapPin size={14} /> {profile.location}, véhiculé
+            <MapPin size={14} /> {profile.location}, {t.locationSuffix}
           </p>
-          <a href="#parcours" className="sr-only">
-            <ArrowDown size={1} />
-          </a>
         </div>
       </section>
     </main>

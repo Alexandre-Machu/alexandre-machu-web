@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Project } from "@/lib/data";
+import { ui, type Lang } from "@/lib/i18n";
 
 // Capture du site si on en a une, sinon une vignette typographique teintée.
 export default function ProjectVisual({
@@ -7,19 +8,21 @@ export default function ProjectVisual({
   priority = false,
   small = false,
   wide = false,
+  lang,
 }: {
   project: Project;
   priority?: boolean;
   small?: boolean;
   /** Bandeau plus bas pour la page projet quand il n'y a pas de capture */
   wide?: boolean;
+  lang: Lang;
 }) {
   if (project.image) {
     return (
       <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-card">
         <Image
           src={project.image}
-          alt={`Capture de ${project.title}`}
+          alt={`${ui[lang].screenshotOf} ${project.title}`}
           fill
           priority={priority}
           sizes="(min-width: 1024px) 600px, 100vw"
