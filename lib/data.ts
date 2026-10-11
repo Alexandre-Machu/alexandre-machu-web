@@ -385,7 +385,7 @@ export const scouts: Item = {
 /** Chiffres mis en avant sous l'accueil */
 export const highlights = [
   { value: "80+", label: "sites cartographiés dans le monde chez Safran" },
-  { value: "950", label: "au TOEIC, après un an à Montréal" },
+  { value: "990", label: "au TOEIC, le score maximum, après un an à Montréal" },
   { value: "500+", label: "membres pour l'asso esport que j'ai co-fondée" },
   { value: "BAFD", label: "directeur de camps scouts depuis 2024" },
 ];
@@ -414,7 +414,7 @@ export const skills = [
   },
   {
     label: "Langues",
-    items: ["Français", "Anglais courant (TOEIC 950/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
+    items: ["Français", "Anglais courant (TOEIC 990/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
   },
   {
     label: "Certifications",

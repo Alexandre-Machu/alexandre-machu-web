@@ -352,7 +352,7 @@ export const scouts: Item = {
 
 export const highlights = [
   { value: "80+", label: "sites mapped worldwide at Safran" },
-  { value: "950", label: "TOEIC score, after a year in Montreal" },
+  { value: "990", label: "TOEIC score (out of 990), after a year in Montreal" },
   { value: "500+", label: "members in the esports society I co-founded" },
   { value: "BAFD", label: "scout camp director since 2024" },
 ];
@@ -381,7 +381,7 @@ export const skills = [
   },
   {
     label: "Languages",
-    items: ["French (native)", "English, fluent (TOEIC 950/990)", "German, intermediate", "Basics of Japanese, Russian, Italian, Arabic"],
+    items: ["French (native)", "English, fluent (TOEIC 990/990)", "German, intermediate", "Basics of Japanese, Russian, Italian, Arabic"],
   },
   {
     label: "Certifications",
