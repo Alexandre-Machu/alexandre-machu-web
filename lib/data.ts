@@ -27,6 +27,7 @@ export type Project = {
   /** Couleur de la vignette quand il n'y a pas de capture */
   tint?: string;
   links: { label: string; href: string }[];
+  /** Seuls les projets featured sont affichés (accueil et pages projets). Les autres restent ici en réserve. */
   featured?: boolean;
   context: string;
   built: string[];
@@ -87,7 +88,6 @@ export const projects: Project[] = [
     stack: ["Google Apps Script", "JavaScript", "Google Calendar", "Google Tasks", "Enable Banking (PSD2)"],
     image: "/projets/alex-os.png",
     tint: "#fdeef3",
-    featured: true,
     links: [],
     context:
       "Je voulais un seul écran pour ma journée et mon budget, sans saisie manuelle. Le principe : si ça demande un effort, je ne m'en servirai pas.",
@@ -407,7 +407,7 @@ export const scouts: Item = {
 /** Chiffres mis en avant sous l'accueil */
 export const highlights = [
   { value: "80+", label: "sites cartographiés dans le monde chez Safran" },
-  { value: "990", label: "au TOEIC, le score maximum, après un an à Montréal" },
+  { value: "990", label: "au TOEIC, le score maximum" },
   { value: "500+", label: "membres pour l'asso esport que j'ai co-fondée" },
   { value: "BAFD", label: "directeur de camps scouts depuis 2024" },
 ];
@@ -436,7 +436,7 @@ export const skills = [
   },
   {
     label: "Langues",
-    items: ["Français", "Anglais courant (TOEIC 990/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
+    items: ["Français", "Anglais C2 (TOEIC 990/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
   },
   {
     label: "Certifications",

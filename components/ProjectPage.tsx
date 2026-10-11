@@ -7,7 +7,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { content, homeHref, ui, type Lang } from "@/lib/i18n";
 
 export function projectMetadata(lang: Lang, slug: string): Metadata {
-  const project = content[lang].projects.find((p) => p.slug === slug);
+  const project = content[lang].projects.find((p) => p.slug === slug && p.featured);
   if (!project) return {};
   return {
     title: project.title,
@@ -26,11 +26,11 @@ export function projectMetadata(lang: Lang, slug: string): Metadata {
 
 export default function ProjectPage({ lang, slug }: { lang: Lang; slug: string }) {
   const t = ui[lang];
-  const { projects } = content[lang];
+  const projects = content[lang].projects.filter((p) => p.featured);
   const index = projects.findIndex((p) => p.slug === slug);
   if (index === -1) notFound();
   const project = projects[index];
-  const next = [1, 2].map((k) => projects[(index + k) % projects.length]);
+  const next = projects.filter((p) => p.slug !== slug);
 
   return (
     <main className="mx-auto max-w-5xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
@@ -102,7 +102,7 @@ export default function ProjectPage({ lang, slug }: { lang: Lang; slug: string }
       </div>
 
       <section className="mt-24 border-t border-line pt-12">
-        <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.otherProjects}</h2>
+        <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.otherProject}</h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2">
           {next.map((p) => (
             <ProjectCard key={p.slug} project={p} lang={lang} />

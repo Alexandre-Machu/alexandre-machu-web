@@ -36,7 +36,7 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 - Un seul site, pas un site SI + un site esport : moins à maintenir, et le profil hybride est un atout. Quand Alex visera l'esport, on changera l'ordre et le texte d'accueil.
 - On repart du projet Next.js de mai plutôt que d'Astro (proposé au début) ; le switch IRL/IG est supprimé car il cachait la moitié du profil.
 - Style clair et épuré, tout sur une page, projets juste après l'accueil.
-- Projets mis en grand : OccilanScout, site Paris 1 Esport, Alex OS. Ensuite : BagExpress, bot LRC, ActiBourse, SC Esport Stats, mémoire M1 Big Data, puis les game jams.
+- Projets affichés (11 oct. 2026, choix d'Alex) : seulement OccilanScout et le site Paris 1 Esport (`featured: true`). Les autres (Alex OS jugé moche, BagExpress, bot LRC, ActiBourse, SC Esport Stats, mémoire M1, game jams) restent dans les données mais ne sont plus affichés ni générés.
 - Hébergeur pas choisi, d'où l'export statique (GitHub Pages, Vercel, Netlify possibles).
 - Textes en français, version anglaise éventuelle plus tard. Style d'écriture d'Alex : concis, factuel, pas de tiret quadratin, pas de ton pompeux.
 

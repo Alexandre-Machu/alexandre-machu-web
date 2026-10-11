@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
-import { FeaturedProject, ProjectCard } from "@/components/ProjectCard";
+import { FeaturedProject } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
 import { BehanceIcon, GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { content, projectHref, ui, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = ui[lang];
-  const { education, esport, experiences, highlights, jams, passions, profile, projects, scouts, skills } =
+  const { education, esport, experiences, highlights, passions, profile, projects, scouts, skills } =
     content[lang];
   const featured = projects.filter((p) => p.featured);
-  const others = projects.filter((p) => !p.featured);
 
   return (
     <main>
@@ -130,34 +129,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <FeaturedProject key={p.slug} project={p} index={i} lang={lang} />
             ))}
           </div>
-
-          <h3 className="mt-24 text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.otherProjects}</h3>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {others.map((p) => (
-              <ProjectCard key={p.slug} project={p} lang={lang} />
-            ))}
-          </div>
-
-          <h3 className="mt-16 text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.jams}</h3>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-            {jams.map((j) => (
-              <li key={j.title} className="flex items-center gap-4 rounded-xl border border-line bg-card p-3">
-                {j.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={j.image} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
-                ) : (
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent-soft font-serif text-xl text-accent">N</span>
-                )}
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium">{j.title}</p>
-                  <p className="text-xs text-muted">
-                    {j.event}
-                    {j.note && <span className="text-accent"> · {j.note}</span>}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
