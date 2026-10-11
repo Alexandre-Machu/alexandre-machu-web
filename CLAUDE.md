@@ -43,7 +43,7 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 
 - Première version terminée, `npm run build` passe. Vérifiée en captures desktop et mobile (375 px, pas de débordement).
 - `node_modules` a été réinstallé proprement après un plantage de l'appli pendant l'install (binaire SWC et lucide-react corrompus).
-- Premier commit poussé sur GitHub le 11 oct. 2026.
+- Premier commit fait en local le 11 oct. 2026, pas encore poussé sur GitHub (à faire avec l'accord d'Alex).
 - Alex n'est plus président de Paris 1 Esport (il a passé la main) : le site affiche « Co-fondateur et ancien président ».
 - Captures OccilanScout (app publique) et Alex OS ajoutées dans `public/projets/`. Alex OS est privé et contient de vraies données bancaires : sa capture est faite sur son `index.html` en local avec des données fictives (google.script.run simulé), jamais sur l'appli en ligne.
 - Pour capturer une page lente (Streamlit), Edge headless en ligne de commande ne suffit pas : lancer Edge avec `--remote-debugging-port` et appeler `Page.captureScreenshot` après une vraie attente (Node 22 a WebSocket en natif).
