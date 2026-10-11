@@ -25,7 +25,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <p className="rise mt-8 text-sm font-medium uppercase tracking-[0.14em] text-accent" style={{ animationDelay: "30ms" }}>
               {profile.role}
             </p>
-            <h1 className="rise mt-4 max-w-3xl text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl" style={{ animationDelay: "60ms" }}>
+            <h1 className="mt-4 max-w-3xl text-[2.6rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl">
               {t.heroBefore}{" "}
               <span className="font-serif font-normal italic text-accent pr-1">{t.heroEm}</span> {t.heroAfter}
             </h1>

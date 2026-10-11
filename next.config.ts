@@ -4,6 +4,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
+  // Page 404 commune aux deux langues (app/global-not-found.tsx)
+  experimental: { globalNotFound: true },
 };
 
 export default nextConfig;
