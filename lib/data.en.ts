@@ -11,7 +11,7 @@ export const profile = {
   github: "https://github.com/Alexandre-Machu",
   behance: "https://www.behance.net/alexandremachu",
   opgg: "https://op.gg/lol/summoners/euw/Colfeo-MALOU",
-  cv: "/cv-alexandre-machu.pdf",
+  cv: "/cv-alexandre-machu-en.pdf",
   availability: "Available for a permanent role from December 2026",
   intro:
     "Enterprise architect apprentice at Safran Electronics & Defense, with a software development background. I'm looking for a business analyst role, or a position in IT governance and cybersecurity.",
@@ -205,7 +205,7 @@ export const experiences: Item[] = [
   },
   {
     period: "Nov 2023 – Apr 2024",
-    title: "Esports Manager (freelance)",
+    title: "Esports Team Manager (freelance)",
     org: "SAN Esport",
     summary: "Managed a women's League of Legends team in a national league, with a tracking tool connected to the Riot API.",
     logo: "/logos/san.png",
@@ -233,7 +233,7 @@ export const experiences: Item[] = [
   },
   {
     period: "Jan – May 2023",
-    title: "Programming Instructor (fixed-term)",
+    title: "Coding Instructor (fixed-term)",
     org: "Écoles eSTIMe",
     summary: "Sole instructor teaching programming and robotics to 100 pupils across 5 classes.",
     logo: "/logos/estime.png",
@@ -247,7 +247,7 @@ export const experiences: Item[] = [
   },
   {
     period: "Apr – Aug 2022",
-    title: "Web Developer (internship, then fixed-term)",
+    title: "Web Developer (internship)",
     org: "Yooz",
     summary: "Web rebuild of an internal tool in Angular and Node.js, in pairs and in sprints.",
     place: "Aimargues, France",
@@ -282,28 +282,28 @@ export const education: Item[] = [
   },
   {
     period: "2024 – 2026",
-    title: "Master's in Information Systems Management (MIKS)",
+    title: "Master MIKS (Information Systems)",
     org: "Sorbonne Business School, Paris 1 Panthéon-Sorbonne",
     logo: "/logos/paris1.png",
     text: "Thesis on application portfolio rationalisation after an acquisition, based on the ARIS repository.",
   },
   {
     period: "2023 – 2024",
-    title: "Bachelor's in Computer Science (BUT, final year)",
+    title: "BUT in Computer Science (3rd year)",
     org: "IUT Montpellier-Sète",
     logo: "/logos/umontpellier.png",
     text: "",
   },
   {
     period: "2022 – 2023",
-    title: "Exchange year, Software Engineering",
+    title: "DUETI in Software Engineering",
     org: "ÉTS Montreal",
     logo: "/logos/ets.png",
     text: "",
   },
   {
     period: "2020 – 2022",
-    title: "Two-year degree in Computer Science (DUT)",
+    title: "DUT in Computer Science",
     org: "IUT Montpellier-Sète",
     logo: "/logos/umontpellier.png",
     text: "",
@@ -313,7 +313,7 @@ export const education: Item[] = [
 export const esport: Item[] = [
   {
     period: "Nov 2025 – Sept 2026",
-    title: "Co-founder and former president",
+    title: "Co-founder and former President",
     org: "Paris 1 Esport",
     logo: "/logos/p1e.png",
     text: "The esports society of Paris 1: more than 500 active members in 5 months, dozens of events, volunteer teams to coordinate. Partnerships with Karmine Corp and Team Vitality, a talk with Nicolas Maurer (CEO of Vitality) at the Sorbonne.",

@@ -114,7 +114,7 @@ export const ui = {
     scoutsStat: "children in my care every summer",
     contactLabel: "Contact",
     contactTitle: "Get in touch",
-    cvPdf: "CV (PDF, in French)",
+    cvPdf: "CV (PDF)",
     locationSuffix: "with a car",
     allProjects: "All projects",
     startingPoint: "Where it started",
