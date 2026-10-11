@@ -61,7 +61,7 @@ export const projects: Project[] = [
     built: [
       "Public site: teams and rosters, matches, news, events, partners.",
       "Admin interface to manage events, teams, staff and partners, with image upload.",
-      "2026 redesign in progress: individual accounts with roles, a change log with undo, an application form linked to Discord, player pages, SEO.",
+      "2026 redesign: new visual identity, individual accounts with roles, a change log with undo, an application form linked to Discord, player pages, SEO.",
       "A companion Discord bot that announces Twitch streams, X posts and event reminders from the site's API.",
     ],
     gallery: [

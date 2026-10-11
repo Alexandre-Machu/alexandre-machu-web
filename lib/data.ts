@@ -82,7 +82,7 @@ export const projects: Project[] = [
     built: [
       "Site public : équipes et rosters, matchs, news, événements, partenaires.",
       "Interface d'administration pour gérer événements, équipes, orga et partenaires, avec upload d'images.",
-      "Refonte 2026 en cours : comptes individuels avec rôles, journal des modifications avec annulation, formulaire de candidature relié à Discord, pages joueurs, SEO.",
+      "Refonte 2026 : nouvelle identité graphique, comptes individuels avec rôles, journal des modifications avec annulation, formulaire de candidature relié à Discord, pages joueurs, SEO.",
       "Un bot Discord à côté, qui annonce les lives Twitch, les posts X et les rappels d'événements à partir de l'API du site.",
     ],
     gallery: [
