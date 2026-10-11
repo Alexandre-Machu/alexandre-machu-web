@@ -33,6 +33,8 @@ export type Project = {
   context: string;
   built: string[];
   result?: string;
+  /** Captures supplémentaires affichées sur la page du projet */
+  gallery?: { src: string; alt: string }[];
 };
 
 export const projects: Project[] = [
@@ -58,6 +60,11 @@ export const projects: Project[] = [
       "Mode stream pour OBS, classement officiel récupéré depuis l'API Toornament, rapports de scouting générés avec Claude.",
     ],
     result: "Plus de 350 games analysées sur 4 éditions, utilisé par les orgas et par mon équipe.",
+    gallery: [
+      { src: "/projets/occilanscout-joueurs.jpg", alt: "Classement des joueurs avec leur note LAN et leurs stats" },
+      { src: "/projets/occilanscout-awards.jpg", alt: "Page des awards de l'édition #8" },
+      { src: "/projets/occilanscout-face-a-face.jpg", alt: "Comparaison face-à-face de deux équipes" },
+    ],
   },
   {
     slug: "paris1esport",
@@ -77,6 +84,10 @@ export const projects: Project[] = [
       "Interface d'administration pour gérer événements, équipes, orga et partenaires, avec upload d'images.",
       "Refonte 2026 en cours : comptes individuels avec rôles, journal des modifications avec annulation, formulaire de candidature relié à Discord, pages joueurs, SEO.",
       "Un bot Discord à côté, qui annonce les lives Twitch, les posts X et les rappels d'événements à partir de l'API du site.",
+    ],
+    gallery: [
+      { src: "/projets/p1e-equipes.jpg", alt: "Page des équipes et rosters par jeu" },
+      { src: "/projets/p1e-evenements.jpg", alt: "Calendrier des événements de l'association" },
     ],
   },
   {
@@ -428,6 +439,14 @@ export const highlights = [
   { value: "990", label: "au TOEIC, le score maximum" },
   { value: "500+", label: "membres pour l'asso esport que j'ai co-fondée" },
   { value: "BAFD", label: "directeur de camps scouts depuis 2024" },
+];
+
+/** Ce qui me différencie (section sous les chiffres clés) */
+export const strengths = [
+  { title: "Un BA qui vient du dev", text: "J'ai été développeur avant de passer au SI. Je lis du code, je comprends une API et je parle aux équipes techniques sans intermédiaire." },
+  { title: "Référentiels et qualité de données", text: "Mon quotidien chez Safran : le référentiel applicatif de plus de 80 sites, avec ses doublons et ses incohérences à traiter." },
+  { title: "International", text: "Anglais C2 (TOEIC 990), un an à Montréal, et un travail en direct avec les correspondants pays chez Safran." },
+  { title: "Défense et cybersécurité", text: "Un an dans l'industrie de défense, et un DU Influence et Cybersécurité à la Sorbonne pour le cadre réglementaire." },
 ];
 
 export const passions: { emoji: string; value: string; label: string }[] = [

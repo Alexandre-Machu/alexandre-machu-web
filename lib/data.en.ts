@@ -40,6 +40,11 @@ export const projects: Project[] = [
       "OBS stream mode, official standings pulled from the Toornament API, scouting reports generated with Claude.",
     ],
     result: "Over 350 games analysed across 4 editions, used by the organisers and by my team.",
+    gallery: [
+      { src: "/projets/occilanscout-joueurs.jpg", alt: "Player rankings with LAN rating and stats" },
+      { src: "/projets/occilanscout-awards.jpg", alt: "Awards page for edition #8" },
+      { src: "/projets/occilanscout-face-a-face.jpg", alt: "Head-to-head comparison of two teams" },
+    ],
   },
   {
     slug: "paris1esport",
@@ -58,6 +63,10 @@ export const projects: Project[] = [
       "Admin interface to manage events, teams, staff and partners, with image upload.",
       "2026 redesign in progress: individual accounts with roles, a change log with undo, an application form linked to Discord, player pages, SEO.",
       "A companion Discord bot that announces Twitch streams, X posts and event reminders from the site's API.",
+    ],
+    gallery: [
+      { src: "/projets/p1e-equipes.jpg", alt: "Teams and rosters page, by game" },
+      { src: "/projets/p1e-evenements.jpg", alt: "The society's event calendar" },
     ],
   },
   {
@@ -391,6 +400,13 @@ export const highlights = [
   { value: "990", label: "TOEIC score, the maximum" },
   { value: "500+", label: "members in the esports society I co-founded" },
   { value: "BAFD", label: "scout camp director since 2024" },
+];
+
+export const strengths = [
+  { title: "A BA with a developer background", text: "I was a developer before moving to information systems. I can read code, understand an API and talk to technical teams directly." },
+  { title: "Repositories and data quality", text: "My day-to-day at Safran: the application repository of more than 80 sites, with its duplicates and inconsistencies to fix." },
+  { title: "International", text: "English C2 (TOEIC 990), a year in Montreal, and direct work with country contacts at Safran." },
+  { title: "Defence and cybersecurity", text: "A year in the defence industry, and a university diploma in Influence and Cybersecurity at the Sorbonne for the regulatory side." },
 ];
 
 export const passions: { emoji: string; value: string; label: string }[] = [

@@ -10,9 +10,11 @@ type Photo = { src: string; alt: string };
 export default function Gallery({
   photos,
   labels,
+  tone = "dark",
 }: {
   photos: Photo[];
   labels: { open: string; close: string; prev: string; next: string };
+  tone?: "dark" | "light";
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [index, setIndex] = useState<number | null>(null);
@@ -48,7 +50,7 @@ export default function Gallery({
             type="button"
             onClick={() => open(i)}
             aria-label={`${labels.open} : ${ph.alt}`}
-            className="group mb-4 block w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-xl ring-1 ring-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className={`group mb-4 block w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-xl ring-1 focus-visible:outline-2 focus-visible:outline-offset-2 ${tone === "dark" ? "ring-white/10 focus-visible:outline-white" : "ring-line focus-visible:outline-accent"}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

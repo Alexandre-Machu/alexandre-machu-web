@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import ProjectVisual from "@/components/ProjectVisual";
 import { ProjectCard } from "@/components/ProjectCard";
+import Gallery from "@/components/Gallery";
 import { content, homeHref, ui, type Lang } from "@/lib/i18n";
 
 export function projectMetadata(lang: Lang, slug: string): Metadata {
@@ -100,6 +101,13 @@ export default function ProjectPage({ lang, slug }: { lang: Lang; slug: string }
           </ul>
         </aside>
       </div>
+
+      {project.gallery && (
+        <section className="mt-20">
+          <h2 className="font-serif text-3xl">{t.projectGallery}</h2>
+          <Gallery photos={project.gallery} labels={t.gallery} tone="light" />
+        </section>
+      )}
 
       <section className="mt-24 border-t border-line pt-12">
         <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-faint">{t.otherProject}</h2>

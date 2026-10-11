@@ -2,12 +2,13 @@ import { ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
 import { FeaturedProject } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
 import Gallery from "@/components/Gallery";
+import Reveal from "@/components/Reveal";
 import { BehanceIcon, GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { content, ui, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = ui[lang];
-  const { education, esport, experiences, highlights, passions, photos, profile, projects, scouts, skills } =
+  const { education, esport, experiences, highlights, passions, photos, strengths, profile, projects, scouts, skills } =
     content[lang];
   const featured = projects.filter((p) => p.featured);
 
@@ -82,9 +83,22 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </dl>
       </section>
 
+      {/* Ce qui me différencie */}
+      <Section id="plus-value" label={t.strengthsLabel} title={t.strengthsTitle}>
+        <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {strengths.map((s, i) => (
+            <article key={s.title} className="rounded-2xl border border-line bg-card p-6">
+              <p className="font-serif text-3xl text-accent">{String(i + 1).padStart(2, "0")}</p>
+              <h3 className="mt-4 font-semibold tracking-tight">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
+            </article>
+          ))}
+        </Reveal>
+      </Section>
+
       {/* Parcours */}
       <Section id="parcours" label={t.parcoursLabel} title={t.parcoursTitle}>
-        <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">
+        <Reveal className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <h3 className="mb-4 text-sm font-medium text-muted">{t.experiences}</h3>
             <Timeline items={experiences} detailsLabel={t.showDetails} />
@@ -108,7 +122,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       {/* Projets */}
@@ -126,7 +140,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
           <div className="mt-14 flex flex-col gap-20">
             {featured.map((p, i) => (
-              <FeaturedProject key={p.slug} project={p} index={i} lang={lang} />
+              <Reveal key={p.slug}>
+                <FeaturedProject project={p} index={i} lang={lang} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -161,7 +177,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </figure>
           </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <Reveal className="mt-12 grid gap-4 md:grid-cols-2">
             {esport.map((e, i) => (
               <article
                 key={e.org}
@@ -198,12 +214,12 @@ export default function HomePage({ lang }: { lang: Lang }) {
                 <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </span>
             </a>
-          </div>
+          </Reveal>
 
-          <div className="mt-20">
+          <Reveal className="mt-20">
             <h3 className="font-serif text-3xl tracking-tight sm:text-4xl">{t.galleryTitle}</h3>
             <Gallery photos={photos} labels={t.gallery} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -213,6 +229,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         label={t.outsideLabel}
         title={t.outsideTitle}
       >
+        <Reveal>
         <article className="flex flex-col gap-6 rounded-2xl border border-line bg-card p-6 sm:flex-row sm:items-center sm:p-8">
           <div className="sm:w-56 sm:shrink-0">
             <p className="font-serif text-5xl tracking-tight text-accent">35</p>
@@ -237,6 +254,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </article>
           ))}
         </div>
+        </Reveal>
       </Section>
 
       {/* Contact */}
