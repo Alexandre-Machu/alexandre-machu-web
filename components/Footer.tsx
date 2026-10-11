@@ -1,5 +1,5 @@
 import { profile } from "@/lib/data";
-import { GithubIcon, LinkedinIcon } from "./Icons";
+import { BehanceIcon, GithubIcon, LinkedinIcon } from "./Icons";
 
 export default function Footer() {
   return (
@@ -12,6 +12,9 @@ export default function Footer() {
           </a>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ink" aria-label="LinkedIn">
             <LinkedinIcon />
+          </a>
+          <a href={profile.behance} target="_blank" rel="noopener noreferrer" className="hover:text-ink" aria-label="Behance">
+            <BehanceIcon />
           </a>
           <a href={`mailto:${profile.email}`} className="hover:text-ink">
             {profile.email}

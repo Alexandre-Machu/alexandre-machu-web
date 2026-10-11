@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Download, Mail, MapPin } from "lucide-react";
 import { FeaturedProject, ProjectCard } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
-import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { BehanceIcon, GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { content, projectHref, ui, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
@@ -59,6 +59,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
             </a>
             <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-full p-2.5 text-muted hover:bg-card hover:text-ink">
               <GithubIcon size={18} />
+            </a>
+            <a href={profile.behance} target="_blank" rel="noopener noreferrer" aria-label="Behance" className="rounded-full p-2.5 text-muted hover:bg-card hover:text-ink">
+              <BehanceIcon size={18} />
             </a>
           </div>
         </div>
@@ -166,6 +169,14 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ff4655]">{t.esportLabel}</p>
               <h2 className="mt-3 max-w-3xl font-serif text-4xl tracking-tight sm:text-6xl">{t.esportTitle}</h2>
               <p className="mt-5 max-w-2xl leading-relaxed text-white/70">{t.esportIntro}</p>
+              <a
+                href={profile.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-medium hover:border-white/50"
+              >
+                <BehanceIcon size={16} /> {t.behance}
+              </a>
             </div>
             <figure className="md:w-[300px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -6,6 +6,7 @@ export const profile = {
   email: "amachu.pro@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexandre-machu/",
   github: "https://github.com/Alexandre-Machu",
+  behance: "https://www.behance.net/alexandremachu",
   cv: "/cv-alexandre-machu.pdf",
   availability: "Disponible en CDI à partir de décembre 2026",
   intro:
@@ -372,6 +373,27 @@ export const esport: Item[] = [
     logo: "/logos/msg.png",
     text: "Association étudiante de Montpellier, 150 membres actifs en moins d'un an.",
   },
+  {
+    period: "2022 – 2023",
+    title: "Responsable communication et graphiste",
+    org: "esporTS, ÉTS Montréal",
+    logo: "/logos/esports-ets.png",
+    text: "L'association esport de l'ÉTS, pendant mon année à Montréal : communication et visuels du club.",
+  },
+  {
+    period: "mai – juil. 2021",
+    title: "Monteur vidéo (freelance)",
+    org: "FC Nantes Esport",
+    logo: "/logos/fcnantes.png",
+    text: "Vidéos promotionnelles de l'équipe League of Legends en division 2 de la Ligue française : dérushage, montage et effets sur la suite Adobe, traduction des communications anglaises.",
+  },
+  {
+    period: "avr. 2020 – mai 2021",
+    title: "Monteur vidéo et community manager (freelance)",
+    org: "Elyandra Esport",
+    logo: "/logos/elyandra.png",
+    text: "Réseaux sociaux (Twitter, Instagram) et vidéos d'une équipe League of Legends qui est montée de la division 3 à la division 2, puis jusqu'en LFL. Publications planifiées avec TweetDeck et Trello.",
+  },
 ];
 
 export const scouts: Item = {
@@ -414,7 +436,7 @@ export const skills = [
   },
   {
     label: "Langues",
-    items: ["Français", "Anglais courant (TOEIC 990/990)", "Allemand intermédiaire"],
+    items: ["Français", "Anglais courant (TOEIC 990/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
   },
   {
     label: "Certifications",

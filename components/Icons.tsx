@@ -1,4 +1,4 @@
-// lucide-react n'a plus les logos de marques : on garde les deux dont on a besoin ici.
+// lucide-react n'a plus les logos de marques : on garde ceux dont on a besoin ici.
 
 export function GithubIcon({ size = 16 }: { size?: number }) {
   return (
@@ -12,6 +12,14 @@ export function LinkedinIcon({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+    </svg>
+  );
+}
+
+export function BehanceIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7.8 11.3c1-.5 1.6-1.3 1.6-2.6C9.4 6.3 7.6 5.6 5.5 5.6H0v12.8h5.7c2.1 0 4.1-1 4.1-3.4 0-1.5-.7-2.6-2-3.7ZM2.6 7.8h2.4c.9 0 1.8.3 1.8 1.4 0 1-.6 1.4-1.6 1.4H2.6V7.8Zm2.7 8.4H2.6v-3.5h2.8c1.1 0 1.8.5 1.8 1.7 0 1.3-.9 1.8-1.9 1.8ZM15.4 6.3h5.5v1.4h-5.5V6.3Zm2.8 2.9c-3 0-5 2.2-5 5.2 0 3.1 1.9 5.2 5 5.2 2.4 0 3.9-1.1 4.6-3.3h-2.4c-.3.8-1.2 1.3-2.1 1.3-1.6 0-2.4-.9-2.4-2.5h7.2c.2-3.3-1.6-5.9-4.9-5.9Zm-2.3 4.3c.1-1.3.9-2.1 2.2-2.1 1.3 0 2 .8 2.1 2.1h-4.3Z" />
     </svg>
   );
 }

@@ -49,7 +49,7 @@ export const ui = {
     esportLabel: "Esport",
     esportTitle: "L'autre moitié de mon parcours.",
     esportIntro:
-      "Joueur, manager, président d'asso, staff, photographe… Depuis 2023, j'ai tenu à peu près tous les rôles qui existent autour d'un tournoi.",
+      "Joueur, monteur vidéo, community manager, graphiste, manager, président d'asso, staff, photographe… Depuis 2020, j'ai tenu à peu près tous les rôles qui existent autour d'un tournoi.",
     esportPhotoAlt: "Alexandre au micro, posant une question pendant une conférence sur l'esport",
     esportCaption:
       "Séminaire « Esport : un nouveau terrain pour les sciences du sport », Université Paris-Saclay, septembre 2026.",
@@ -57,6 +57,7 @@ export const ui = {
     playerText:
       "Sur League of Legends, top et support, 6 titres en compétition. Pour préparer les tournois de mon équipe, j'ai fait OccilanScout.",
     seeOccilan: "Voir OccilanScout",
+    behance: "Mes visuels sur Behance",
     outsideLabel: "En dehors",
     outsideTitle: "Ce qui me fait tenir",
     outsideIntro:
@@ -105,7 +106,7 @@ export const ui = {
     esportLabel: "Esports",
     esportTitle: "The other half of my story.",
     esportIntro:
-      "Player, manager, society president, event staff, photographer… Since 2023, I've held almost every role there is around a tournament.",
+      "Player, video editor, community manager, graphic designer, manager, society president, event staff, photographer… Since 2020, I've held almost every role there is around a tournament.",
     esportPhotoAlt: "Alexandre with a microphone, asking a question at an esports conference",
     esportCaption:
       "\"Esports: a new field for sport sciences\" seminar, Université Paris-Saclay, September 2026.",
@@ -113,6 +114,7 @@ export const ui = {
     playerText:
       "On League of Legends, top and support, 6 competitive titles. To prepare my team's tournaments, I built OccilanScout.",
     seeOccilan: "See OccilanScout",
+    behance: "My work on Behance",
     outsideLabel: "Outside work",
     outsideTitle: "What keeps me going",
     outsideIntro:

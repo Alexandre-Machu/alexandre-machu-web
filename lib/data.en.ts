@@ -9,6 +9,7 @@ export const profile = {
   email: "amachu.pro@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexandre-machu/",
   github: "https://github.com/Alexandre-Machu",
+  behance: "https://www.behance.net/alexandremachu",
   cv: "/cv-alexandre-machu.pdf",
   availability: "Available for a permanent role from December 2026",
   intro:
@@ -340,6 +341,27 @@ export const esport: Item[] = [
     logo: "/logos/msg.png",
     text: "Student society in Montpellier, 150 active members in less than a year.",
   },
+  {
+    period: "2022 – 2023",
+    title: "Head of communications and graphic designer",
+    org: "esporTS, ÉTS Montreal",
+    logo: "/logos/esports-ets.png",
+    text: "The ÉTS esports society, during my year in Montreal: the club's communication and visuals.",
+  },
+  {
+    period: "May – Jul 2021",
+    title: "Video editor (freelance)",
+    org: "FC Nantes Esport",
+    logo: "/logos/fcnantes.png",
+    text: "Promotional videos for the League of Legends team in the French league's second division: rushes, editing and effects in Adobe's suite, translating English communications.",
+  },
+  {
+    period: "Apr 2020 – May 2021",
+    title: "Video editor and community manager (freelance)",
+    org: "Elyandra Esport",
+    logo: "/logos/elyandra.png",
+    text: "Social media (Twitter, Instagram) and videos for a League of Legends team that climbed from the third to the second division, then all the way to the LFL. Posts planned with TweetDeck and Trello.",
+  },
 ];
 
 export const scouts: Item = {
@@ -381,7 +403,7 @@ export const skills = [
   },
   {
     label: "Languages",
-    items: ["French (native)", "English, fluent (TOEIC 990/990)", "German, intermediate"],
+    items: ["French (native)", "English, fluent (TOEIC 990/990)", "German, intermediate", "Basics of Japanese, Russian, Italian, Arabic"],
   },
   {
     label: "Certifications",
