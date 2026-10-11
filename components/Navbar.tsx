@@ -2,9 +2,10 @@ import Link from "next/link";
 import { profile } from "@/lib/data";
 
 const links = [
-  { href: "/#projets", label: "Projets" },
   { href: "/#parcours", label: "Parcours" },
-  { href: "/#engagements", label: "Engagements" },
+  { href: "/#projets", label: "Projets" },
+  { href: "/#esport", label: "Esport" },
+  { href: "/#ailleurs", label: "En dehors" },
   { href: "/#contact", label: "Contact" },
 ];
 

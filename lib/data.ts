@@ -2,14 +2,15 @@ export const profile = {
   name: "Alexandre Machu",
   alias: "Colfeo",
   role: "Business Analyst SI",
-  location: "Ivry-sur-Seine, Paris",
+  location: "Paris",
   email: "amachu.pro@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexandre-machu/",
   github: "https://github.com/Alexandre-Machu",
   cv: "/cv-alexandre-machu.pdf",
   availability: "Disponible en CDI à partir de décembre 2026",
   intro:
-    "En M2 Management des SI à la Sorbonne et architecte d'entreprise en alternance chez Safran Electronics & Defense. Business analyst venu du développement, je travaille sur les référentiels applicatifs et la qualité des données dans un contexte industriel international. Et je code encore beaucoup à côté : outils de stats esport, bots Discord, sites pour mes assos.",
+    "Architecte d'entreprise en alternance chez Safran Electronics & Defense, en M2 Management des SI à la Sorbonne et en DU Influence et Cybersécurité. Je viens du développement, ce qui m'aide à comprendre les équipes techniques. Je cherche un CDI de business analyst, ou un poste côté gouvernance et cybersécurité.",
+  photo: "/alexandre.png",
 };
 
 export type Project = {
@@ -211,6 +212,8 @@ export type Item = {
   place?: string;
   text: string;
   bullets?: string[];
+  /** Logo dans public/logos, sinon on affiche les initiales */
+  logo?: string;
 };
 
 export const experiences: Item[] = [
@@ -219,6 +222,7 @@ export const experiences: Item[] = [
     title: "Architecte d'entreprise (alternance)",
     org: "Safran Electronics & Defense",
     place: "Massy",
+    logo: "/logos/safran.png",
     text: "",
     bullets: [
       "Cartographie du SI de plus de 80 sites SED dans le monde, en lien direct avec les correspondants pays.",
@@ -245,6 +249,7 @@ export const experiences: Item[] = [
     title: "Développeur web (alternance)",
     org: "CFD-Innovation",
     place: "Baillargues",
+    logo: "/logos/cfd.png",
     text: "",
     bullets: [
       "GoForm (SaaS de gestion de formations) : tests d'intégration PHPUnit et pipeline GitLab CI.",
@@ -269,6 +274,7 @@ export const experiences: Item[] = [
     title: "Développeur web (stage puis CDD)",
     org: "Yooz",
     place: "Aimargues",
+    logo: "/logos/yooz.png",
     text: "",
     bullets: [
       "Refonte web d'Explorer, outil interne d'exploration du flux documentaire, en binôme et en sprints.",
@@ -280,22 +286,12 @@ export const experiences: Item[] = [
 
 export const extras: Item[] = [
   {
-    period: "2025",
-    title: "Staff événement",
-    org: "VALORANT Champions Paris · ITL Production",
-    text: "Support opérationnel sur site.",
-  },
-  {
-    period: "2026",
-    title: "Photographe accrédité",
-    org: "LEC Roadtrip · Karmine Corp",
-    text: "Partenariat Paris 1 Esport × Karmine Corp à Évry.",
-  },
-  {
-    period: "2024 – 2025",
+    period: "sept. 2024 – janv. 2025",
     title: "Étude de marché",
     org: "Guerlain",
-    text: "Benchmark, entretiens qualitatifs, étude quantitative et recommandations.",
+    place: "Paris",
+    logo: "/logos/guerlain.png",
+    text: "Projet du master : benchmark sectoriel, entretiens qualitatifs, étude quantitative et recommandations.",
   },
 ];
 
@@ -304,53 +300,105 @@ export const education: Item[] = [
     period: "2024 – 2026",
     title: "M2 Management des SI (MIKS)",
     org: "EMS Paris 1 Panthéon-Sorbonne",
+    logo: "/logos/paris1.png",
     text: "Mémoire sur la rationalisation du portefeuille applicatif après une acquisition, à partir du référentiel ARIS.",
+  },
+  {
+    period: "Depuis oct. 2026",
+    title: "DU Influence et Cybersécurité",
+    org: "École de droit de la Sorbonne, Paris 1",
+    logo: "/logos/paris1.png",
+    text: "Droit de la cybersécurité, cybercriminalité, intelligence économique et influence.",
   },
   {
     period: "2023 – 2024",
     title: "BUT Informatique (3e année)",
     org: "IUT Montpellier-Sète",
+    logo: "/logos/umontpellier.png",
     text: "",
   },
   {
     period: "2022 – 2023",
     title: "DUETI Génie logiciel",
     org: "ÉTS Montréal",
-    text: "Année d'échange au Canada.",
+    logo: "/logos/ets.png",
+    text: "Un an au Canada.",
   },
   {
     period: "2020 – 2022",
     title: "DUT Informatique",
     org: "IUT Montpellier-Sète",
+    logo: "/logos/umontpellier.png",
     text: "",
   },
 ];
 
-export const engagements: Item[] = [
+/** Tout ce qui touche à l'esport, présenté à part du parcours pro */
+export const esport: Item[] = [
   {
     period: "nov. 2025 – sept. 2026",
     title: "Co-fondateur et ancien président",
     org: "Paris 1 Esport",
-    text: "Co-fondation et présidence de l'association esport de Paris 1 : plus de 500 membres actifs en 5 mois, des dizaines d'événements, coordination d'équipes bénévoles. Partenariats avec Karmine Corp et Team Vitality, conférence avec Nicolas Maurer (CEO de Vitality) à la Sorbonne.",
+    logo: "/logos/p1e.png",
+    text: "L'association esport de Paris 1 : plus de 500 membres actifs en 5 mois, des dizaines d'événements, des équipes bénévoles à coordonner. Partenariats avec Karmine Corp et Team Vitality, conférence avec Nicolas Maurer (CEO de Vitality) à la Sorbonne.",
   },
   {
-    period: "2024",
+    period: "avr. 2026",
+    title: "Photographe accrédité média",
+    org: "LEC Roadtrip · Karmine Corp",
+    logo: "/logos/karmine.png",
+    text: "Aux Arènes d'Évry-Courcouronnes, en bord de scène et en zone presse, grâce au partenariat entre Paris 1 Esport et Karmine Corp.",
+  },
+  {
+    period: "nov. 2025",
+    title: "Staff événementiel",
+    org: "VALORANT Champions Paris · ITL Production",
+    logo: "/logos/valorant.png",
+    text: "Mission freelance sur le championnat du monde de Valorant, organisé par Riot Games : support opérationnel sur site.",
+  },
+  {
+    period: "nov. 2023 – avr. 2024",
+    title: "Manager",
+    org: "SAN Esport",
+    text: "Une équipe League of Legends féminine en championnat national : planning, inscriptions, suivi avec le coach, et un outil branché sur l'API Riot pour l'analyse.",
+  },
+  {
+    period: "avr. – sept. 2024",
     title: "Président",
     org: "Montpellier Student Gaming",
-    text: "150 membres actifs en moins d'un an.",
+    text: "Association étudiante de Montpellier, 150 membres actifs en moins d'un an.",
   },
-  {
-    period: "2021 – 2026",
-    title: "Directeur et responsable de camps scouts",
-    org: "Éclaireuses Éclaireurs unionistes de France",
-    text: "Animateur de l'unité de Jacou (34) depuis 2021, directeur de camp depuis 2024. Encadrement de 6 responsables et 35 enfants, un week-end par mois et 3 semaines en été. BAFA, BAFD, PSC1.",
-  },
+];
+
+export const scouts: Item = {
+  period: "Depuis 2021",
+  title: "Directeur et responsable de camps scouts",
+  org: "Éclaireuses Éclaireurs unionistes de France",
+  place: "Unité de Jacou (34)",
+  text: "Animateur depuis 2021, directeur de camp depuis 2024. J'encadre 6 responsables et 35 enfants, un week-end par mois et trois semaines l'été. BAFA, BAFD, PSC1.",
+};
+
+/** Chiffres mis en avant sous l'accueil */
+export const highlights = [
+  { value: "80+", label: "sites cartographiés dans le monde chez Safran" },
+  { value: "950", label: "au TOEIC, après un an à Montréal" },
+  { value: "500+", label: "membres pour l'asso esport que j'ai co-fondée" },
+  { value: "BAFD", label: "directeur de camps scouts depuis 2024" },
+];
+
+export const passions = [
+  { value: "Top 1000", label: "Speedrun de Celeste", detail: "Au classement mondial, catégorie any%." },
+  { value: "16 ans", label: "Piano", detail: "Sans jamais avoir appris le solfège." },
+  { value: "6 ans", label: "Volley-ball", detail: "" },
+  { value: "Photo", label: "Esport surtout", detail: "Une esthétique sombre et contrastée, au bord de la scène." },
+  { value: "Moto", label: "Suzuki V-Strom 650", detail: "Permis A2." },
+  { value: "Rails", label: "Métros, trains, avions", detail: "Une constante chez moi." },
 ];
 
 export const skills = [
   {
     label: "Analyse métier",
-    items: ["Recueil des besoins", "Spécifications fonctionnelles", "Cartographie applicative et référentiels (ARIS)", "Qualité et gouvernance de données", "Reporting Power BI"],
+    items: ["Études de cadrage", "Recueil des besoins", "Spécifications fonctionnelles", "Cartographie applicative et référentiels (ARIS)", "Qualité et gouvernance de données", "Reporting Power BI"],
   },
   {
     label: "Technique",
