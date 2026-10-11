@@ -236,6 +236,7 @@ export const experiences: Item[] = [
     period: "nov. 2023 – avr. 2024",
     title: "Manager esport (freelance)",
     org: "SAN Esport",
+    logo: "/logos/san.png",
     place: "Montpellier / Paris",
     text: "",
     bullets: [
@@ -261,6 +262,7 @@ export const experiences: Item[] = [
     period: "janv. – mai 2023",
     title: "Formateur en programmation (CDD)",
     org: "Écoles eSTIMe",
+    logo: "/logos/estime.png",
     place: "Montréal",
     text: "",
     bullets: [
@@ -360,12 +362,14 @@ export const esport: Item[] = [
     period: "nov. 2023 – avr. 2024",
     title: "Manager",
     org: "SAN Esport",
+    logo: "/logos/san.png",
     text: "Une équipe League of Legends féminine en championnat national : planning, inscriptions, suivi avec le coach, et un outil branché sur l'API Riot pour l'analyse.",
   },
   {
     period: "avr. – sept. 2024",
     title: "Président",
     org: "Montpellier Student Gaming",
+    logo: "/logos/msg.png",
     text: "Association étudiante de Montpellier, 150 membres actifs en moins d'un an.",
   },
 ];
