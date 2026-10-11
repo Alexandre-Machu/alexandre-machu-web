@@ -117,7 +117,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.14em] text-accent">{t.projectsLabel}</p>
               <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">{t.projectsTitle}</h2>
-              <p className="mt-5 max-w-2xl leading-relaxed text-muted">{t.projectsIntro}</p>
             </div>
             <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted hover:text-ink">
               <GithubIcon size={15} /> {t.allOnGithub}
@@ -202,7 +201,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
           <div className="mt-20">
             <h3 className="font-serif text-3xl tracking-tight sm:text-4xl">{t.galleryTitle}</h3>
-            <p className="mt-2 text-sm text-white/60">{t.galleryIntro}</p>
             <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
               {photos.map((ph) => (
                 // eslint-disable-next-line @next/next/no-img-element
