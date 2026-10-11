@@ -46,7 +46,8 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 - `node_modules` a été réinstallé proprement après un plantage de l'appli pendant l'install (binaire SWC et lucide-react corrompus).
 - Poussé sur GitHub le 11 oct. 2026. Le site est calqué sur le CV Business Analyst (même titre, expériences, dates, formation, compétences). Règle : quand le CV change, répercuter sur le site.
 - Idée directrice validée par Alex : partir du CV, et montrer en plus les side projects et le reste (missions hors CV, assos, centres d'intérêt). Un « brief » plus lourd (section à propos, différenciateurs, chasse aux chiffres) a été écarté le 11 oct., ne pas le ressortir.
-- Alex n'est plus président de Paris 1 Esport (il a passé la main) : le site affiche « Co-fondateur et ancien président ».
+- Contenu au 11 oct. 2026 : accueil (photo en carte, chiffres clés), parcours (résumé d'une ligne + détail dépliable, logos), 2 projets, section Esport sombre (8 expériences, carte Master vers op.gg, galerie de ses photos dans public/photos, photo du séminaire Paris-Saclay), « Le reste du temps » (scouts + 5 passions avec emoji), contact. Lien Behance.
+- Retours d'Alex sur le ton : pas de phrases d'accroche ni de petits commentaires « IA », titres factuels, pas de chiffres inventés.
 - Captures OccilanScout (app publique) et Alex OS ajoutées dans `public/projets/`. Alex OS est privé et contient de vraies données bancaires : sa capture est faite sur son `index.html` en local avec des données fictives (google.script.run simulé), jamais sur l'appli en ligne.
 - Pour capturer une page lente (Streamlit), Edge headless en ligne de commande ne suffit pas : lancer Edge avec `--remote-debugging-port` et appeler `Page.captureScreenshot` après une vraie attente (Node 22 a WebSocket en natif).
 
