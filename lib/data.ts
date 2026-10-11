@@ -74,7 +74,7 @@ export const projects: Project[] = [
     year: "2025 – 2026",
     kind: "Web · Full-stack",
     stack: ["Next.js", "TypeScript", "Prisma", "Supabase", "Vercel", "Cloudinary"],
-    image: "/projets/p1e.png",
+    image: "/projets/p1e.jpg",
     featured: true,
     links: [{ label: "paris1esport.fr", href: "https://paris1esport.fr" }],
     context:
