@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     template: "%s · Alexandre Machu",
   },
   description:
-    "Architecte d'entreprise chez Safran, M2 Management des SI à la Sorbonne et développeur. Projets, parcours et contact.",
-  keywords: ["Alexandre Machu", "Architecte d'entreprise", "Portfolio", "Safran", "Sorbonne", "Développeur"],
+    "Business Analyst SI venu du développement, M2 Management des SI à la Sorbonne, alternance chez Safran Electronics & Defense. Projets, parcours et contact.",
+  keywords: ["Alexandre Machu", "Business Analyst", "Portfolio", "Safran", "Sorbonne", "Référentiels applicatifs"],
 };
 
 export default function RootLayout({

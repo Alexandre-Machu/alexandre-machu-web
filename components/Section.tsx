@@ -35,6 +35,13 @@ export function Timeline({ items, stacked = false }: { items: Item[]; stacked?: 
             </h3>
             {it.place && <p className="text-sm text-faint">{it.place}</p>}
             {it.text && <p className="mt-2 text-sm leading-relaxed text-muted">{it.text}</p>}
+            {it.bullets && (
+              <ul className="mt-2 flex list-disc flex-col gap-1 pl-4 text-sm leading-relaxed text-muted marker:text-faint">
+                {it.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </li>
       ))}

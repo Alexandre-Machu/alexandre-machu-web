@@ -1,7 +1,7 @@
 export const profile = {
   name: "Alexandre Machu",
   alias: "Colfeo",
-  role: "Architecte d'entreprise & développeur",
+  role: "Business Analyst SI",
   location: "Ivry-sur-Seine, Paris",
   email: "amachu.pro@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexandre-machu/",
@@ -9,7 +9,7 @@ export const profile = {
   cv: "/cv-alexandre-machu.pdf",
   availability: "Disponible en CDI à partir de décembre 2026",
   intro:
-    "Apprenti architecte d'entreprise chez Safran Electronics & Defense et en M2 Management des SI à la Sorbonne. Je viens du développement web et je code encore beaucoup à côté : des outils de stats esport, des bots Discord, des sites pour mes assos.",
+    "En M2 Management des SI à la Sorbonne et architecte d'entreprise en alternance chez Safran Electronics & Defense. Business analyst venu du développement, je travaille sur les référentiels applicatifs et la qualité des données dans un contexte industriel international. Et je code encore beaucoup à côté : outils de stats esport, bots Discord, sites pour mes assos.",
 };
 
 export type Project = {
@@ -210,36 +210,71 @@ export type Item = {
   org: string;
   place?: string;
   text: string;
+  bullets?: string[];
 };
 
 export const experiences: Item[] = [
   {
-    period: "2025 – 2026",
+    period: "sept. 2025 – nov. 2026",
     title: "Architecte d'entreprise (alternance)",
     org: "Safran Electronics & Defense",
-    place: "Paris",
-    text: "Urbanisation du SI dans un groupe industriel multi-sites. Cartographie applicative sous ARIS, analyse des besoins métiers, gouvernance et risques SI.",
+    place: "Massy",
+    text: "",
+    bullets: [
+      "Cartographie du SI de plus de 80 sites SED dans le monde, en lien direct avec les correspondants pays.",
+      "Rédaction de dossiers d'architecture générale (DAG) : cadrage du besoin, analyse d'impact, scénarios.",
+      "Rationalisation du parc applicatif : doublons, incohérences de données, candidats au décommissionnement.",
+      "Modélisation et scripting sous ARIS, création et réorganisation des AOR.",
+      "Restitutions au management et aux équipes projet (Power BI, Excel, PowerPoint, Confluence).",
+    ],
   },
   {
-    period: "2024",
-    title: "Esports Operations Coordinator",
+    period: "nov. 2023 – avr. 2024",
+    title: "Manager esport (freelance)",
     org: "SAN Esport",
     place: "Montpellier / Paris",
-    text: "Gestion d'une équipe de 7 personnes et coordination des opérations sur des compétitions internationales. Mise en place d'outils d'organisation et d'analyse.",
+    text: "",
+    bullets: [
+      "Gestion d'une équipe League of Legends féminine en championnat national : planning, inscriptions, reporting.",
+      "Relation avec le coach et suivi du bien-être de l'équipe.",
+      "Tableaux de suivi de performance et outil web branché sur l'API Riot pour alimenter l'analyse du coach.",
+    ],
   },
   {
-    period: "2022 – 2024",
-    title: "Développeur web",
-    org: "Yooz · CFD-Innovation",
-    place: "Aimargues / Montpellier",
-    text: "Refonte d'interface en Angular et Node.js chez Yooz (stage puis CDD). Développement Bootstrap et Twig d'une application de gestion de formations utilisée par plus de 30 entreprises.",
+    period: "sept. 2023 – août 2024",
+    title: "Développeur web (alternance)",
+    org: "CFD-Innovation",
+    place: "Baillargues",
+    text: "",
+    bullets: [
+      "GoForm (SaaS de gestion de formations) : tests d'intégration PHPUnit et pipeline GitLab CI.",
+      "POC Crédit Client : refonte web d'écrans IBMi 5250 en PHP/Twig, routes YAML et données mockées en JSON.",
+      "Points hebdomadaires avec le client, support de formation.",
+    ],
   },
   {
-    period: "2023",
-    title: "Formateur en programmation",
+    period: "janv. – mai 2023",
+    title: "Formateur en programmation (CDD)",
     org: "Écoles eSTIMe",
     place: "Montréal",
-    text: "Initiation à Scratch, Python et à la robotique pour une centaine d'élèves de 5 à 12 ans.",
+    text: "",
+    bullets: [
+      "Initiation à la programmation et à la robotique, 100 élèves répartis sur 5 classes.",
+      "Seul intervenant : planification, animation et adaptation des séances.",
+      "Refonte des supports pédagogiques pas à pas.",
+    ],
+  },
+  {
+    period: "avr. – août 2022",
+    title: "Développeur web (stage puis CDD)",
+    org: "Yooz",
+    place: "Aimargues",
+    text: "",
+    bullets: [
+      "Refonte web d'Explorer, outil interne d'exploration du flux documentaire, en binôme et en sprints.",
+      "Front Angular (TypeScript) : arbre Lot / Enveloppe / Document / Page, tableaux d'entités.",
+      "Back Node.js / Express sur PostgreSQL, testé sous Postman.",
+    ],
   },
 ];
 
@@ -267,19 +302,25 @@ export const extras: Item[] = [
 export const education: Item[] = [
   {
     period: "2024 – 2026",
-    title: "Master Management des SI, parcours MIKS CEM",
-    org: "École de Management de la Sorbonne, Paris 1",
+    title: "M2 Management des SI (MIKS)",
+    org: "EMS Paris 1 Panthéon-Sorbonne",
     text: "Mémoire sur la rationalisation du portefeuille applicatif après une acquisition, à partir du référentiel ARIS.",
+  },
+  {
+    period: "2023 – 2024",
+    title: "BUT Informatique (3e année)",
+    org: "IUT Montpellier-Sète",
+    text: "",
   },
   {
     period: "2022 – 2023",
     title: "DUETI Génie logiciel",
-    org: "École de technologie supérieure, Montréal",
+    org: "ÉTS Montréal",
     text: "Année d'échange au Canada.",
   },
   {
-    period: "2020 – 2024",
-    title: "DUT puis BUT Informatique",
+    period: "2020 – 2022",
+    title: "DUT Informatique",
     org: "IUT Montpellier-Sète",
     text: "",
   },
@@ -287,10 +328,10 @@ export const education: Item[] = [
 
 export const engagements: Item[] = [
   {
-    period: "2025 – 2026",
+    period: "nov. 2025 – sept. 2026",
     title: "Co-fondateur et ancien président",
     org: "Paris 1 Esport",
-    text: "Association esport de Paris 1 avec plus de 500 membres. Des dizaines d'événements, partenariats avec Karmine Corp et Team Vitality, conférence avec Nicolas Maurer (CEO de Vitality) à la Sorbonne.",
+    text: "Co-fondation et présidence de l'association esport de Paris 1 : plus de 500 membres actifs en 5 mois, des dizaines d'événements, coordination d'équipes bénévoles. Partenariats avec Karmine Corp et Team Vitality, conférence avec Nicolas Maurer (CEO de Vitality) à la Sorbonne.",
   },
   {
     period: "2024",
@@ -299,28 +340,32 @@ export const engagements: Item[] = [
     text: "150 membres actifs en moins d'un an.",
   },
   {
-    period: "Depuis 2016",
-    title: "Directeur de camp",
+    period: "2021 – 2026",
+    title: "Directeur et responsable de camps scouts",
     org: "Éclaireuses Éclaireurs unionistes de France",
-    text: "Scout depuis 2016, directeur depuis 2024 : une équipe de 6 animateurs et 35 enfants. BAFA, BAFD, PSC1.",
+    text: "Animateur de l'unité de Jacou (34) depuis 2021, directeur de camp depuis 2024. Encadrement de 6 responsables et 35 enfants, un week-end par mois et 3 semaines en été. BAFA, BAFD, PSC1.",
   },
 ];
 
 export const skills = [
   {
-    label: "SI & architecture",
-    items: ["Architecture d'entreprise", "ARIS", "BPM", "Gouvernance IT (COBIT, CMMI)", "Ingénierie des exigences", "Gestion de portefeuille projets"],
+    label: "Analyse métier",
+    items: ["Recueil des besoins", "Spécifications fonctionnelles", "Cartographie applicative et référentiels (ARIS)", "Qualité et gouvernance de données", "Reporting Power BI"],
   },
   {
-    label: "Développement",
-    items: ["TypeScript", "Next.js", "Angular", "Node.js", "Python", "SQL", "Prisma"],
+    label: "Technique",
+    items: ["Python", "SQL", "JavaScript / TypeScript", "Angular", "Node.js", "Next.js", "Twig"],
   },
   {
-    label: "Data & automatisation",
-    items: ["Pandas", "Streamlit", "APIs REST", "GitHub Actions", "Google Apps Script", "Bots Discord"],
+    label: "Outils",
+    items: ["Suite Office / SharePoint", "Confluence", "Jira", "Trello", "Teams", "GitHub Actions"],
   },
   {
     label: "Langues",
-    items: ["Français", "Anglais C1 (TOEIC 950)", "Allemand intermédiaire"],
+    items: ["Français", "Anglais courant (TOEIC 950/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
+  },
+  {
+    label: "Certifications",
+    items: ["BAFA", "BAFD", "PSC1", "Permis B et A2"],
   },
 ];

@@ -50,7 +50,7 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 
 ## Prochaines étapes
 
-1. CV en PDF dans `public/cv-alexandre-machu.pdf` (le bouton CV est cassé tant qu'il manque). Source possible : Canva « CV Base FR » (DAHD3T6HV5E).
+1. Aligner le site sur le CV Business Analyst (`public/cv-alexandre-machu.pdf`, source : `OneDrive\Pro\CVs\7. CV CDI 2026\`) : titre, intro, expériences.
 2. Choisir l'hébergement et éventuellement un nom de domaine (ex. alexandre-machu.fr).
 
 ## Commandes
