@@ -238,14 +238,12 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
         <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {passions.map((p) => (
-            <article key={p.label} className="group rounded-2xl border border-line bg-card p-6">
-              <div className="flex items-start justify-between gap-3">
-                <p className="font-serif text-4xl tracking-tight">{p.value}</p>
-                <span aria-hidden className="text-3xl transition-transform group-hover:-rotate-12 group-hover:scale-110">
-                  {p.emoji}
-                </span>
-              </div>
-              {p.label && <h3 className="mt-3 font-medium">{p.label}</h3>}
+            <article key={p.label} className="group rounded-2xl border border-line bg-card p-5 sm:p-6">
+              <span aria-hidden className="inline-block text-2xl transition-transform group-hover:-rotate-12 group-hover:scale-110 sm:text-3xl">
+                {p.emoji}
+              </span>
+              <p className="mt-3 whitespace-nowrap font-serif text-3xl tracking-tight sm:text-4xl">{p.value}</p>
+              {p.label && <h3 className="mt-2 text-sm font-medium sm:text-base">{p.label}</h3>}
             </article>
           ))}
         </div>

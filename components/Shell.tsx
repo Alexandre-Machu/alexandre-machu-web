@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Instrument_Serif } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "./Navbar";
@@ -50,6 +51,8 @@ export default function Shell({ lang, children }: { lang: Lang; children: React.
         <Navbar lang={lang} />
         <div className="flex-1">{children}</div>
         <Footer />
+        {/* Statistiques de visite Vercel : sans cookies, à activer dans l'onglet Analytics du projet Vercel */}
+        <Analytics />
       </body>
     </html>
   );
