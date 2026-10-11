@@ -43,7 +43,7 @@ export default function Home() {
           <img
             src={profile.photo}
             alt="Portrait d'Alexandre Machu"
-            className="rise order-first h-28 w-28 rounded-full bg-accent-soft object-cover object-top md:order-none md:h-56 md:w-56"
+            className="rise order-first h-28 w-28 rounded-full bg-white object-cover ring-1 ring-line md:order-none md:h-56 md:w-56"
             style={{ animationDelay: "90ms" }}
           />
         </div>
@@ -170,14 +170,25 @@ export default function Home() {
       {/* Esport */}
       <section id="esport" className="bg-[#0d0d12] text-white">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-24">
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ff4655]">Esport</p>
-          <h2 className="mt-3 max-w-3xl font-serif text-4xl tracking-tight sm:text-6xl">
-            L&apos;autre moitié de mon parcours.
-          </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-white/70">
-            Joueur, manager, président d&apos;asso, staff, photographe. Depuis 2023 j&apos;ai pris à peu près tous les rôles
-            autour d&apos;un tournoi. J&apos;y fais ce que je fais au travail : organiser, outiller, tenir un groupe.
-          </p>
+          <div className="grid items-end gap-10 md:grid-cols-[1fr_300px]">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#ff4655]">Esport</p>
+              <h2 className="mt-3 max-w-3xl font-serif text-4xl tracking-tight sm:text-6xl">
+                L&apos;autre moitié de mon parcours.
+              </h2>
+              <p className="mt-5 max-w-2xl leading-relaxed text-white/70">
+                Joueur, manager, président d&apos;asso, staff, photographe. Depuis 2023 j&apos;ai pris à peu près tous les
+                rôles autour d&apos;un tournoi. J&apos;y fais ce que je fais au travail : organiser, outiller, tenir un groupe.
+              </p>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/esport-micro.jpg"
+              alt="Alexandre au micro pendant une conférence"
+              className="aspect-[4/5] w-full rounded-2xl object-cover object-top ring-1 ring-white/10 md:w-[300px]"
+              loading="lazy"
+            />
+          </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {esport.map((e, i) => (

@@ -10,7 +10,7 @@ export const profile = {
   availability: "Disponible en CDI à partir de décembre 2026",
   intro:
     "Architecte d'entreprise en alternance chez Safran Electronics & Defense, en M2 Management des SI à la Sorbonne et en DU Influence et Cybersécurité. Je viens du développement, ce qui m'aide à comprendre les équipes techniques. Je cherche un CDI de business analyst, ou un poste côté gouvernance et cybersécurité.",
-  photo: "/alexandre.png",
+  photo: "/alexandre.webp",
 };
 
 export type Project = {
