@@ -268,18 +268,18 @@ export const extras: Item[] = [
 
 export const education: Item[] = [
   {
-    period: "2024 – 2026",
-    title: "Master's in Information Systems Management (MIKS)",
-    org: "Sorbonne Business School, Paris 1 Panthéon-Sorbonne",
-    logo: "/logos/paris1.png",
-    text: "Thesis on application portfolio rationalisation after an acquisition, based on the ARIS repository.",
-  },
-  {
     period: "Since Oct 2026",
     title: "University diploma in Influence and Cybersecurity",
     org: "Sorbonne Law School, Paris 1",
     logo: "/logos/paris1.png",
     text: "Cybersecurity law, cybercrime, economic intelligence and influence.",
+  },
+  {
+    period: "2024 – 2026",
+    title: "Master's in Information Systems Management (MIKS)",
+    org: "Sorbonne Business School, Paris 1 Panthéon-Sorbonne",
+    logo: "/logos/paris1.png",
+    text: "Thesis on application portfolio rationalisation after an acquisition, based on the ARIS repository.",
   },
   {
     period: "2023 – 2024",
@@ -293,7 +293,7 @@ export const education: Item[] = [
     title: "Exchange year, Software Engineering",
     org: "ÉTS Montreal",
     logo: "/logos/ets.png",
-    text: "A year in Canada.",
+    text: "",
   },
   {
     period: "2020 – 2022",
@@ -357,13 +357,13 @@ export const highlights = [
   { value: "BAFD", label: "scout camp director since 2024" },
 ];
 
-export const passions = [
-  { value: "Top 1000", label: "Celeste speedrun", detail: "On the world leaderboard, any% category." },
-  { value: "16 years", label: "Piano", detail: "Without ever learning to read music." },
-  { value: "6 years", label: "Volleyball", detail: "" },
-  { value: "Photo", label: "Mostly esports", detail: "A dark, high-contrast style, from the side of the stage." },
-  { value: "Moto", label: "Suzuki V-Strom 650", detail: "A2 licence." },
-  { value: "Rails", label: "Metros, trains, planes", detail: "A constant in my life." },
+export const passions: { emoji: string; value: string; label: string; detail: string }[] = [
+  { emoji: "🍓", value: "Top 1000", label: "Celeste speedrun", detail: "Worldwide, any%. I leave the strawberries to others." },
+  { emoji: "🎹", value: "16 years", label: "Piano", detail: "Without being able to read sheet music." },
+  { emoji: "🏐", value: "6 years", label: "Volleyball", detail: "" },
+  { emoji: "📸", value: "Photo", label: "Mostly esports", detail: "Dark and high-contrast, from the side of the stage." },
+  { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650", detail: "A2 licence." },
+  { emoji: "🚆", value: "Rails", label: "Metros, trains, planes", detail: "A constant in my life." },
 ];
 
 export const skills = [
@@ -381,7 +381,7 @@ export const skills = [
   },
   {
     label: "Languages",
-    items: ["French (native)", "English, fluent (TOEIC 990/990)", "German, intermediate", "Basics of Japanese, Russian, Italian, Arabic"],
+    items: ["French (native)", "English, fluent (TOEIC 990/990)", "German, intermediate"],
   },
   {
     label: "Certifications",

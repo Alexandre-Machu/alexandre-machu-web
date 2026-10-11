@@ -7,7 +7,7 @@ import { content, projectHref, ui, type Lang } from "@/lib/i18n";
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = ui[lang];
-  const { education, esport, experiences, extras, highlights, jams, passions, profile, projects, scouts, skills } =
+  const { education, esport, experiences, highlights, jams, passions, profile, projects, scouts, skills } =
     content[lang];
   const featured = projects.filter((p) => p.featured);
   const others = projects.filter((p) => !p.featured);
@@ -30,13 +30,18 @@ export default function HomePage({ lang }: { lang: Lang }) {
               <span className="font-serif font-normal italic text-accent pr-1">{t.heroEm}</span> {t.heroAfter}
             </h1>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={profile.photo}
-            alt={t.photoAlt}
-            className="rise order-first h-28 w-28 rounded-full bg-white object-cover ring-1 ring-line md:order-none md:h-56 md:w-56"
-            style={{ animationDelay: "90ms" }}
-          />
+          <div className="rise relative order-first w-36 md:order-none md:w-60" style={{ animationDelay: "90ms" }}>
+            <div aria-hidden className="absolute inset-0 rotate-6 rounded-[1.75rem] bg-accent-soft" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={profile.photo}
+              alt={t.photoAlt}
+              className="relative aspect-[4/5] w-full -rotate-2 rounded-[1.75rem] bg-white object-cover object-[50%_20%] shadow-[0_18px_40px_-20px_rgba(0,0,0,0.35)] ring-1 ring-line"
+            />
+            <span className="absolute -bottom-3 left-3 rotate-[-4deg] rounded-full bg-ink px-3 py-1 text-xs font-medium text-paper shadow">
+              📍 {profile.location}
+            </span>
+          </div>
         </div>
         <p className="rise mt-6 max-w-2xl text-lg leading-relaxed text-muted" style={{ animationDelay: "120ms" }}>
           {profile.intro}
@@ -80,8 +85,6 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <div>
             <h3 className="mb-4 text-sm font-medium text-muted">{t.experiences}</h3>
             <Timeline items={experiences} />
-            <h3 className="mb-4 mt-10 text-sm font-medium text-muted">{t.extras}</h3>
-            <Timeline items={extras} />
           </div>
           <div>
             <h3 className="mb-4 text-sm font-medium text-muted">{t.education}</h3>
@@ -233,8 +236,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
         <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {passions.map((p) => (
-            <article key={p.label} className="rounded-2xl border border-line bg-card p-6">
-              <p className="font-serif text-4xl tracking-tight">{p.value}</p>
+            <article key={p.label} className="group rounded-2xl border border-line bg-card p-6">
+              <div className="flex items-start justify-between gap-3">
+                <p className="font-serif text-4xl tracking-tight">{p.value}</p>
+                <span aria-hidden className="text-3xl transition-transform group-hover:-rotate-12 group-hover:scale-110">
+                  {p.emoji}
+                </span>
+              </div>
               <h3 className="mt-3 font-medium">{p.label}</h3>
               {p.detail && <p className="mt-1 text-sm leading-relaxed text-muted">{p.detail}</p>}
             </article>

@@ -41,7 +41,7 @@ export const ui = {
     projectsLabel: "Projets",
     projectsTitle: "Des outils pour de vrais besoins",
     projectsIntro:
-      "Chaque projet part d'un problème concret, le mien ou celui d'un groupe : préparer un tournoi, faire vivre une asso, tenir un budget. Je commence par comprendre le besoin, puis je construis l'outil.",
+      "Chaque projet part d'un problème concret, le mien ou celui d'un groupe : préparer un tournoi, faire vivre une asso, tenir un budget… Je commence par comprendre le besoin, puis je construis l'outil.",
     allOnGithub: "Tout sur GitHub",
     otherProjects: "Autres projets",
     jams: "Game jams & concours",
@@ -49,7 +49,7 @@ export const ui = {
     esportLabel: "Esport",
     esportTitle: "L'autre moitié de mon parcours.",
     esportIntro:
-      "Joueur, manager, président d'asso, staff, photographe. Depuis 2023 j'ai pris à peu près tous les rôles autour d'un tournoi. J'y fais ce que je fais au travail : organiser, outiller, tenir un groupe.",
+      "Joueur, manager, président d'asso, staff, photographe… Depuis 2023, j'ai tenu à peu près tous les rôles qui existent autour d'un tournoi.",
     esportPhotoAlt: "Alexandre au micro, posant une question pendant une conférence sur l'esport",
     esportCaption:
       "Séminaire « Esport : un nouveau terrain pour les sciences du sport », Université Paris-Saclay, septembre 2026.",
@@ -97,7 +97,7 @@ export const ui = {
     projectsLabel: "Projects",
     projectsTitle: "Tools for real needs",
     projectsIntro:
-      "Each project starts from a concrete problem, mine or a group's: preparing a tournament, running a society, keeping a budget. I start by understanding the need, then I build the tool.",
+      "Each project starts from a concrete problem, mine or a group's: preparing a tournament, running a society, keeping a budget… I start by understanding the need, then I build the tool.",
     allOnGithub: "Everything on GitHub",
     otherProjects: "More projects",
     jams: "Game jams & contests",
@@ -105,7 +105,7 @@ export const ui = {
     esportLabel: "Esports",
     esportTitle: "The other half of my story.",
     esportIntro:
-      "Player, manager, society president, event staff, photographer. Since 2023 I've held almost every role around a tournament. I do there what I do at work: organise, build tools, keep a group together.",
+      "Player, manager, society president, event staff, photographer… Since 2023, I've held almost every role there is around a tournament.",
     esportPhotoAlt: "Alexandre with a microphone, asking a question at an esports conference",
     esportCaption:
       "\"Esports: a new field for sport sciences\" seminar, Université Paris-Saclay, September 2026.",

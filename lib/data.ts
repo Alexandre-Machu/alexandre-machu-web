@@ -299,18 +299,18 @@ export const extras: Item[] = [
 
 export const education: Item[] = [
   {
-    period: "2024 – 2026",
-    title: "M2 Management des SI (MIKS)",
-    org: "EMS Paris 1 Panthéon-Sorbonne",
-    logo: "/logos/paris1.png",
-    text: "Mémoire sur la rationalisation du portefeuille applicatif après une acquisition, à partir du référentiel ARIS.",
-  },
-  {
     period: "Depuis oct. 2026",
     title: "DU Influence et Cybersécurité",
     org: "École de droit de la Sorbonne, Paris 1",
     logo: "/logos/paris1.png",
     text: "Droit de la cybersécurité, cybercriminalité, intelligence économique et influence.",
+  },
+  {
+    period: "2024 – 2026",
+    title: "M2 Management des SI (MIKS)",
+    org: "EMS Paris 1 Panthéon-Sorbonne",
+    logo: "/logos/paris1.png",
+    text: "Mémoire sur la rationalisation du portefeuille applicatif après une acquisition, à partir du référentiel ARIS.",
   },
   {
     period: "2023 – 2024",
@@ -324,7 +324,7 @@ export const education: Item[] = [
     title: "DUETI Génie logiciel",
     org: "ÉTS Montréal",
     logo: "/logos/ets.png",
-    text: "Un an au Canada.",
+    text: "",
   },
   {
     period: "2020 – 2022",
@@ -390,13 +390,13 @@ export const highlights = [
   { value: "BAFD", label: "directeur de camps scouts depuis 2024" },
 ];
 
-export const passions = [
-  { value: "Top 1000", label: "Speedrun de Celeste", detail: "Au classement mondial, catégorie any%." },
-  { value: "16 ans", label: "Piano", detail: "Sans jamais avoir appris le solfège." },
-  { value: "6 ans", label: "Volley-ball", detail: "" },
-  { value: "Photo", label: "Esport surtout", detail: "Une esthétique sombre et contrastée, au bord de la scène." },
-  { value: "Moto", label: "Suzuki V-Strom 650", detail: "Permis A2." },
-  { value: "Rails", label: "Métros, trains, avions", detail: "Une constante chez moi." },
+export const passions: { emoji: string; value: string; label: string; detail: string }[] = [
+  { emoji: "🍓", value: "Top 1000", label: "Speedrun de Celeste", detail: "Mondial, en any%. Les fraises, je les laisse aux autres." },
+  { emoji: "🎹", value: "16 ans", label: "Piano", detail: "Sans savoir lire une partition." },
+  { emoji: "🏐", value: "6 ans", label: "Volley-ball", detail: "" },
+  { emoji: "📸", value: "Photo", label: "Surtout en esport", detail: "Sombre et contrasté, depuis le bord de la scène." },
+  { emoji: "🏍️", value: "Moto", label: "Suzuki V-Strom 650", detail: "Permis A2." },
+  { emoji: "🚆", value: "Rails", label: "Métros, trains, avions", detail: "Une constante chez moi." },
 ];
 
 export const skills = [
@@ -414,7 +414,7 @@ export const skills = [
   },
   {
     label: "Langues",
-    items: ["Français", "Anglais courant (TOEIC 990/990)", "Allemand intermédiaire", "Notions de japonais, russe, italien, arabe"],
+    items: ["Français", "Anglais courant (TOEIC 990/990)", "Allemand intermédiaire"],
   },
   {
     label: "Certifications",
