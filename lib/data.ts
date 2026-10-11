@@ -1,0 +1,326 @@
+export const profile = {
+  name: "Alexandre Machu",
+  alias: "Colfeo",
+  role: "Architecte d'entreprise & développeur",
+  location: "Ivry-sur-Seine, Paris",
+  email: "amachu.pro@gmail.com",
+  linkedin: "https://www.linkedin.com/in/alexandre-machu/",
+  github: "https://github.com/Alexandre-Machu",
+  cv: "/cv-alexandre-machu.pdf",
+  availability: "Disponible en CDI à partir de décembre 2026",
+  intro:
+    "Apprenti architecte d'entreprise chez Safran Electronics & Defense et en M2 Management des SI à la Sorbonne. Je viens du développement web et je code encore beaucoup à côté : des outils de stats esport, des bots Discord, des sites pour mes assos.",
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  /** Titre court pour la vignette */
+  short?: string;
+  tagline: string;
+  year: string;
+  kind: string;
+  stack: string[];
+  image?: string;
+  /** Couleur de la vignette quand il n'y a pas de capture */
+  tint?: string;
+  links: { label: string; href: string }[];
+  featured?: boolean;
+  context: string;
+  built: string[];
+  result?: string;
+};
+
+export const projects: Project[] = [
+  {
+    slug: "occilanscout",
+    title: "OccilanScout",
+    tagline:
+      "Stats et scouting League of Legends pour les Occi'lan, une LAN de Toulouse où joue mon équipe.",
+    year: "2025 – 2026",
+    kind: "Data · Esport",
+    stack: ["Python", "Streamlit", "Riot API", "GitHub Actions", "Discord API", "Claude API"],
+    image: "/projets/occilanscout.png",
+    tint: "#e8eefc",
+    featured: true,
+    links: [{ label: "App publique", href: "https://occilan-data.streamlit.app" }],
+    context:
+      "À chaque édition de l'Occi'lan, on préparait les matchs à la main sur op.gg et dans des Google Sheets. J'ai d'abord fait un script qui sortait un Excel de stats (OccilanStats), puis j'ai tout repris dans une vraie application.",
+    built: [
+      "Pipeline Riot API qui récupère toutes les games du tournoi, les timelines et les rangs actuels. Les joueurs sont suivis par PUUID, donc un changement de pseudo ne casse rien.",
+      "Application Streamlit en deux versions : une publique pour les orgas et le stream, une privée pour mon équipe avec scouting, assistant de draft et espace scrims.",
+      "Power ranking basé sur un Elo par joueur, qui prédit correctement environ 68 % des games.",
+      "Mise à jour en direct pendant la LAN avec GitHub Actions, et notifications Discord (récap de chaque game, prochain adversaire envoyé en DM).",
+      "Mode stream pour OBS, classement officiel récupéré depuis l'API Toornament, rapports de scouting générés avec Claude.",
+    ],
+    result: "Plus de 350 games analysées sur 4 éditions, utilisé par les orgas et par mon équipe.",
+  },
+  {
+    slug: "paris1esport",
+    title: "Site de Paris 1 Esport",
+    tagline:
+      "Le site de l'association esport de Paris 1 Panthéon-Sorbonne, avec une admin que le bureau utilise sans toucher au code.",
+    year: "2025 – 2026",
+    kind: "Web · Full-stack",
+    stack: ["Next.js", "TypeScript", "Prisma", "Supabase", "Vercel", "Cloudinary"],
+    image: "/projets/p1e.png",
+    featured: true,
+    links: [{ label: "paris1esport.fr", href: "https://paris1esport.fr" }],
+    context:
+      "L'asso avait besoin d'un site pour présenter ses équipes, ses événements et ses partenaires. Le vrai enjeu, c'était que les membres du bureau puissent le tenir à jour seuls.",
+    built: [
+      "Site public : équipes et rosters, matchs, news, événements, partenaires.",
+      "Interface d'administration pour gérer événements, équipes, orga et partenaires, avec upload d'images.",
+      "Refonte 2026 en cours : comptes individuels avec rôles, journal des modifications avec annulation, formulaire de candidature relié à Discord, pages joueurs, SEO.",
+      "Un bot Discord à côté, qui annonce les lives Twitch, les posts X et les rappels d'événements à partir de l'API du site.",
+    ],
+  },
+  {
+    slug: "alex-os",
+    title: "Alex OS",
+    tagline:
+      "Mon tableau de bord du quotidien : agenda, tâches, routines et budget avec synchro bancaire automatique.",
+    year: "2026",
+    kind: "Outil perso",
+    stack: ["Google Apps Script", "JavaScript", "Google Calendar", "Google Tasks", "Enable Banking (PSD2)"],
+    image: "/projets/alex-os.png",
+    tint: "#fdeef3",
+    featured: true,
+    links: [],
+    context:
+      "Je voulais un seul écran pour ma journée et mon budget, sans saisie manuelle. Le principe : si ça demande un effort, je ne m'en servirai pas.",
+    built: [
+      "Web app Apps Script : agenda du jour, tâches Google Tasks, routines avec séries et jokers.",
+      "Mail le soir « Et demain ? » : je réponds au mail et les tâches sont créées toutes seules.",
+      "Synchro bancaire en lecture seule via Enable Banking (PSD2) sur deux banques, catégorisation automatique qui apprend des corrections.",
+      "Enveloppes mensuelles, détection des abonnements, projection mois par mois et alertes après chaque synchro.",
+    ],
+    result: "Je l'utilise tous les jours. Projet privé, pas de démo publique (capture avec des données fictives).",
+  },
+  {
+    slug: "bagexpress",
+    title: "BagExpress",
+    tagline:
+      "Plateforme de livraison de bagages entre gares et hôtels, faite pour le cours de Cloud Computing du M2.",
+    year: "2026",
+    kind: "Web · Cloud",
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth", "Leaflet"],
+    image: "/projets/bagexpress.png",
+    links: [
+      { label: "Démo", href: "https://bag-express.vercel.app" },
+      { label: "Code", href: "https://github.com/Alexandre-Machu/BagExpress" },
+    ],
+    context:
+      "Projet de groupe du M2 MIKS : concevoir et déployer une application cloud complète, de la base de données à la mise en ligne.",
+    built: [
+      "Deux espaces : client (réservation en 3 étapes sur carte, suivi) et chauffeur (courses disponibles, prise en charge, livraison).",
+      "Authentification NextAuth, mots de passe hashés, routes protégées par middleware.",
+      "Base PostgreSQL sur Supabase avec Prisma, déploiement sur Vercel.",
+      "Interface traduite en 8 langues.",
+    ],
+  },
+  {
+    slug: "lrc-presence-bot",
+    title: "LRC Presence Bot",
+    tagline: "Bot Discord qui gère les présences du soir, les absences et les anniversaires d'un serveur de jeu.",
+    year: "2025 – 2026",
+    kind: "Bot · Automatisation",
+    stack: ["Python", "discord.py", "Google Sheets API"],
+    tint: "#eef6ee",
+    links: [{ label: "Code", href: "https://github.com/Alexandre-Machu/lrc-presence-bot" }],
+    context:
+      "Sur notre serveur, on demandait tous les jours qui venait jouer le soir et à quelle heure. Le bot fait ça tout seul.",
+    built: [
+      "Message de présence quotidien avec heure d'arrivée et jeux choisis, récap du nombre de joueurs par jeu.",
+      "Calendrier d'absences cliquable et absences planifiées à l'avance.",
+      "Anniversaires avec notification, export des présences vers Google Sheets chaque soir.",
+      "État sauvegardé sur disque pour survivre aux redémarrages, tests automatisés.",
+    ],
+  },
+  {
+    slug: "actibourse",
+    title: "ActiBourse Scout",
+    tagline: "Une bourse simulée pour un grand jeu de camp scout : 5 équipes, 8 actions, des cours qui bougent tout seuls.",
+    year: "2025",
+    kind: "Web · Temps réel",
+    stack: ["JavaScript", "Node.js", "WebSockets", "Railway"],
+    tint: "#fff4e0",
+    links: [{ label: "Code", href: "https://github.com/Alexandre-Machu/ActiBourseScout-Camp2025" }],
+    context:
+      "Je dirige des camps scouts depuis 2024. Pour le camp 2025, on voulait un grand jeu où les jeunes achètent et revendent des actions pendant la journée.",
+    built: [
+      "Cours qui varient aléatoirement entre 5 minutes et 1 h 30, avec un mode test accéléré.",
+      "Achat et vente par équipe avec vérification des fonds, historique et classement en direct.",
+      "Mode local sans installation, ou mode serveur synchronisé entre plusieurs appareils via WebSockets.",
+    ],
+    result: "Utilisé en vrai pendant le camp d'été 2025.",
+  },
+  {
+    slug: "sc-esport-stats",
+    title: "SC Esport Stats",
+    tagline: "Dashboard de suivi d'une équipe League of Legends : winrate par side, champions, stats joueurs.",
+    year: "2025",
+    kind: "Data · Esport",
+    stack: ["Python", "Streamlit", "Pandas", "Plotly"],
+    tint: "#efeafd",
+    links: [{ label: "Code", href: "https://github.com/Alexandre-Machu/SC-Esport-Stats" }],
+    context: "Premier outil de stats esport, fait pour suivre la progression d'une équipe sur ses matchs.",
+    built: [
+      "Import des matchs et calcul des stats par side, par champion et par joueur.",
+      "Dashboard Streamlit avec graphiques Plotly.",
+    ],
+  },
+  {
+    slug: "memoire-big-data-esport",
+    title: "Mémoire M1 : Big Data et esport",
+    short: "Big Data & esport",
+    tagline: "Le rôle du Big Data dans l'analyse prédictive des performances, avec League of Legends comme cas d'étude.",
+    year: "2025",
+    kind: "Recherche",
+    stack: ["Analyse de données", "Machine learning", "Riot API"],
+    tint: "#f1f1ee",
+    links: [
+      {
+        label: "Lire le mémoire",
+        href: "https://docs.google.com/document/d/1fomn2MA39cfw-g-J2taiS1VrptPqxtg5pUXURP_1mQY/edit?usp=sharing",
+      },
+    ],
+    context: "Mémoire de M1 Management des SI à la Sorbonne.",
+    built: [
+      "État de l'art sur la data dans l'esport professionnel.",
+      "Étude de cas sur League of Legends : quelles données prédisent la victoire, et comment les équipes s'en servent.",
+    ],
+  },
+];
+
+export const jams = [
+  {
+    title: "Sunken Memories",
+    event: "Code Game Jam 2022",
+    note: "Prix Design",
+    image: "/projets/sunken-memories.png",
+  },
+  { title: "The Golden Odyssey", event: "Code Game Jam 2021", image: "/projets/golden-odyssey.png" },
+  { title: "Nuit de l'Info 2021", event: "Lauréat, prix général et défis externes" },
+];
+
+export type Item = {
+  period: string;
+  title: string;
+  org: string;
+  place?: string;
+  text: string;
+};
+
+export const experiences: Item[] = [
+  {
+    period: "2025 – 2026",
+    title: "Architecte d'entreprise (alternance)",
+    org: "Safran Electronics & Defense",
+    place: "Paris",
+    text: "Urbanisation du SI dans un groupe industriel multi-sites. Cartographie applicative sous ARIS, analyse des besoins métiers, gouvernance et risques SI.",
+  },
+  {
+    period: "2024",
+    title: "Esports Operations Coordinator",
+    org: "SAN Esport",
+    place: "Montpellier / Paris",
+    text: "Gestion d'une équipe de 7 personnes et coordination des opérations sur des compétitions internationales. Mise en place d'outils d'organisation et d'analyse.",
+  },
+  {
+    period: "2022 – 2024",
+    title: "Développeur web",
+    org: "Yooz · CFD-Innovation",
+    place: "Aimargues / Montpellier",
+    text: "Refonte d'interface en Angular et Node.js chez Yooz (stage puis CDD). Développement Bootstrap et Twig d'une application de gestion de formations utilisée par plus de 30 entreprises.",
+  },
+  {
+    period: "2023",
+    title: "Formateur en programmation",
+    org: "Écoles eSTIMe",
+    place: "Montréal",
+    text: "Initiation à Scratch, Python et à la robotique pour une centaine d'élèves de 5 à 12 ans.",
+  },
+];
+
+export const extras: Item[] = [
+  {
+    period: "2025",
+    title: "Staff événement",
+    org: "VALORANT Champions Paris · ITL Production",
+    text: "Support opérationnel sur site.",
+  },
+  {
+    period: "2026",
+    title: "Photographe accrédité",
+    org: "LEC Roadtrip · Karmine Corp",
+    text: "Partenariat Paris 1 Esport × Karmine Corp à Évry.",
+  },
+  {
+    period: "2024 – 2025",
+    title: "Étude de marché",
+    org: "Guerlain",
+    text: "Benchmark, entretiens qualitatifs, étude quantitative et recommandations.",
+  },
+];
+
+export const education: Item[] = [
+  {
+    period: "2024 – 2026",
+    title: "Master Management des SI, parcours MIKS CEM",
+    org: "École de Management de la Sorbonne, Paris 1",
+    text: "Mémoire sur la rationalisation du portefeuille applicatif après une acquisition, à partir du référentiel ARIS.",
+  },
+  {
+    period: "2022 – 2023",
+    title: "DUETI Génie logiciel",
+    org: "École de technologie supérieure, Montréal",
+    text: "Année d'échange au Canada.",
+  },
+  {
+    period: "2020 – 2024",
+    title: "DUT puis BUT Informatique",
+    org: "IUT Montpellier-Sète",
+    text: "",
+  },
+];
+
+export const engagements: Item[] = [
+  {
+    period: "2025 – 2026",
+    title: "Co-fondateur et ancien président",
+    org: "Paris 1 Esport",
+    text: "Association esport de Paris 1 avec plus de 500 membres. Des dizaines d'événements, partenariats avec Karmine Corp et Team Vitality, conférence avec Nicolas Maurer (CEO de Vitality) à la Sorbonne.",
+  },
+  {
+    period: "2024",
+    title: "Président",
+    org: "Montpellier Student Gaming",
+    text: "150 membres actifs en moins d'un an.",
+  },
+  {
+    period: "Depuis 2016",
+    title: "Directeur de camp",
+    org: "Éclaireuses Éclaireurs unionistes de France",
+    text: "Scout depuis 2016, directeur depuis 2024 : une équipe de 6 animateurs et 35 enfants. BAFA, BAFD, PSC1.",
+  },
+];
+
+export const skills = [
+  {
+    label: "SI & architecture",
+    items: ["Architecture d'entreprise", "ARIS", "BPM", "Gouvernance IT (COBIT, CMMI)", "Ingénierie des exigences", "Gestion de portefeuille projets"],
+  },
+  {
+    label: "Développement",
+    items: ["TypeScript", "Next.js", "Angular", "Node.js", "Python", "SQL", "Prisma"],
+  },
+  {
+    label: "Data & automatisation",
+    items: ["Pandas", "Streamlit", "APIs REST", "GitHub Actions", "Google Apps Script", "Bots Discord"],
+  },
+  {
+    label: "Langues",
+    items: ["Français", "Anglais C1 (TOEIC 950)", "Allemand intermédiaire"],
+  },
+];
