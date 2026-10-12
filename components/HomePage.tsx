@@ -3,6 +3,7 @@ import { FeaturedProject } from "@/components/ProjectCard";
 import { Logo, Section, Timeline } from "@/components/Section";
 import Gallery from "@/components/Gallery";
 import Reveal from "@/components/Reveal";
+import PersonJsonLd from "@/components/PersonJsonLd";
 import { BehanceIcon, GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { content, ui, type Lang } from "@/lib/i18n";
 
@@ -14,6 +15,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <main>
+      <PersonJsonLd lang={lang} />
       {/* Accueil */}
       <section className="mx-auto max-w-5xl px-4 pb-14 pt-12 sm:px-6 sm:pb-20 sm:pt-24">
         <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
