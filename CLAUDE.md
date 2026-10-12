@@ -47,7 +47,9 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 - Poussé sur GitHub le 11 oct. 2026. Le site est calqué sur le CV Business Analyst (même titre, expériences, dates, formation, compétences). Règle : quand le CV change, répercuter sur le site.
 - Idée directrice validée par Alex : partir du CV, et montrer en plus les side projects et le reste (missions hors CV, assos, centres d'intérêt). Un « brief » plus lourd a été écarté le 11 oct. ; seule la section « Ce qui me différencie » (4 points, demandée ensuite par Alex) en est reprise.
 - Mémoire M2 : confidentiel (Safran), ne pas le détailler sur le site.
-- En attente d'Alex : une recommandation (texte + nom + poste) à intégrer ; éventuellement une adresse mail à son domaine.
+- En attente d'Alex : une recommandation (texte + nom + poste) à intégrer. Pas d'adresse mail au domaine (refusé par Alex).
+- Référencement : `app/sitemap.ts` (pages FR + EN liées), `app/robots.ts`, fiche Person JSON-LD (`components/PersonJsonLd.tsx`). Domaine validé dans Google Search Console le 12 oct. 2026 (TXT google-site-verification dans la zone OVH, à ne pas supprimer), sitemap envoyé.
+- Audit Lighthouse du 12 oct. 2026 : 94 à 100 partout (mobile et ordinateur).
 - Contenu au 11 oct. 2026 : accueil (photo en carte, chiffres clés), parcours (résumé d'une ligne + détail dépliable, logos), 2 projets, section Esport sombre (8 expériences, carte Master vers op.gg, galerie de ses photos dans public/photos, photo du séminaire Paris-Saclay), « Le reste du temps » (scouts + 5 passions avec emoji), contact. Lien Behance.
 - Retours d'Alex sur le ton : pas de phrases d'accroche ni de petits commentaires « IA », titres factuels, pas de chiffres inventés.
 - Captures OccilanScout (app publique) et Alex OS ajoutées dans `public/projets/`. Alex OS est privé et contient de vraies données bancaires : sa capture est faite sur son `index.html` en local avec des données fictives (google.script.run simulé), jamais sur l'appli en ligne.
