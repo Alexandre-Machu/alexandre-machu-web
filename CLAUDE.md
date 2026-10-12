@@ -27,7 +27,7 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 - Site bilingue : français sur `/`, anglais sur `/en` (projets : `/projets/<slug>` et `/en/projects/<slug>`). Deux layouts racines via les groupes `app/(fr)` et `app/(en)`, bouton FR / EN dans la nav (`components/LangSwitch.tsx`).
 - `lib/data.ts` (français) et `lib/data.en.ts` (anglais) : tout le contenu, mêmes exports dans le même ordre. **Toute modif de l'un se reporte dans l'autre.**
 - `lib/i18n.ts` : textes d'interface des deux langues, helpers de liens (`projectHref`, `switchPath`).
-- `components/HomePage.tsx` et `components/ProjectPage.tsx` : les pages, avec un paramètre `lang`. `components/Shell.tsx` : html, polices, métadonnées (hreflang, Open Graph, `SITE_URL` à changer avec le nom de domaine).
+- `components/HomePage.tsx` et `components/ProjectPage.tsx` : les pages, avec un paramètre `lang`. `components/Shell.tsx` : html, polices, métadonnées (hreflang, Open Graph, `SITE_URL`), statistiques Vercel. `components/Gallery.tsx` : galerie avec agrandissement au clic. `components/Reveal.tsx` : apparition au défilement. `app/global-not-found.tsx` : 404 bilingue (flag `experimental.globalNotFound`).
 - Images d'aperçu : `/og/fr.png` et `/og/en.png`, générées au build par `lib/og.tsx` via des route handlers.
 - `public/` : `projets/` (captures), `logos/`, `alexandre.webp` (photo pro), `esport-micro.jpg` (séminaire esport Paris-Saclay, sept. 2026), CV.
 
@@ -35,17 +35,19 @@ et montrer le profil hybride SI / esport, avec le SI en premier pour l'instant.
 
 - Un seul site, pas un site SI + un site esport : moins à maintenir, et le profil hybride est un atout. Quand Alex visera l'esport, on changera l'ordre et le texte d'accueil.
 - On repart du projet Next.js de mai plutôt que d'Astro (proposé au début) ; le switch IRL/IG est supprimé car il cachait la moitié du profil.
-- Style clair et épuré, tout sur une page, projets juste après l'accueil.
+- Style clair et épuré, tout sur une page. Ordre : accueil, chiffres clés, « Ce qui me différencie », parcours, projets, esport (fond sombre), « Le reste du temps », contact.
 - Projets affichés (11 oct. 2026, choix d'Alex) : seulement OccilanScout et le site Paris 1 Esport (`featured: true`). Les autres (Alex OS jugé moche, BagExpress, bot LRC, ActiBourse, SC Esport Stats, mémoire M1, game jams) restent dans les données mais ne sont plus affichés ni générés.
-- Hébergeur pas choisi, d'où l'export statique (GitHub Pages, Vercel, Netlify possibles).
-- Textes en français, version anglaise éventuelle plus tard. Style d'écriture d'Alex : concis, factuel, pas de tiret quadratin, pas de ton pompeux.
+- Hébergé sur Vercel (export statique). Site bilingue FR / EN.
+- Style d'écriture d'Alex : concis, factuel, pas de tiret quadratin, pas de ton pompeux.
 
 ## État actuel (au 11 oct. 2026)
 
 - Première version terminée, `npm run build` passe. Vérifiée en captures desktop et mobile (375 px, pas de débordement).
 - `node_modules` a été réinstallé proprement après un plantage de l'appli pendant l'install (binaire SWC et lucide-react corrompus).
 - Poussé sur GitHub le 11 oct. 2026. Le site est calqué sur le CV Business Analyst (même titre, expériences, dates, formation, compétences). Règle : quand le CV change, répercuter sur le site.
-- Idée directrice validée par Alex : partir du CV, et montrer en plus les side projects et le reste (missions hors CV, assos, centres d'intérêt). Un « brief » plus lourd (section à propos, différenciateurs, chasse aux chiffres) a été écarté le 11 oct., ne pas le ressortir.
+- Idée directrice validée par Alex : partir du CV, et montrer en plus les side projects et le reste (missions hors CV, assos, centres d'intérêt). Un « brief » plus lourd a été écarté le 11 oct. ; seule la section « Ce qui me différencie » (4 points, demandée ensuite par Alex) en est reprise.
+- Mémoire M2 : confidentiel (Safran), ne pas le détailler sur le site.
+- En attente d'Alex : une recommandation (texte + nom + poste) à intégrer ; éventuellement une adresse mail à son domaine.
 - Contenu au 11 oct. 2026 : accueil (photo en carte, chiffres clés), parcours (résumé d'une ligne + détail dépliable, logos), 2 projets, section Esport sombre (8 expériences, carte Master vers op.gg, galerie de ses photos dans public/photos, photo du séminaire Paris-Saclay), « Le reste du temps » (scouts + 5 passions avec emoji), contact. Lien Behance.
 - Retours d'Alex sur le ton : pas de phrases d'accroche ni de petits commentaires « IA », titres factuels, pas de chiffres inventés.
 - Captures OccilanScout (app publique) et Alex OS ajoutées dans `public/projets/`. Alex OS est privé et contient de vraies données bancaires : sa capture est faite sur son `index.html` en local avec des données fictives (google.script.run simulé), jamais sur l'appli en ligne.
